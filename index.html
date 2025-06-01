@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ethereal Ink Productions 🔥</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #111, #000);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
+    header {
+      background: #0f0;
+      color: #000;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+      animation: slideDown 1.2s ease-out;
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #0f0;
+      transition: transform 0.4s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  ETHEREAL INK PRODUCTIONS 🔥
+</header>
+
+<section class="gallery">
+  <img src="image1.jpg" alt="Titi riding a BMW bike">
+  <img src="image2.jpg" alt="Titi standing next to a blue BMW car">
+  <img src="image3.jpg" alt="Vrega SBK cartoon couple walking">
+  <img src="image4.jpg" alt="Titi in superhero green suit">
+  <img src="image5.jpg" alt="Titi in shooting action">
+  <img src="image6.jpg" alt="Coming soon banner">
+</section>
+
+<footer>
+  &copy; 2025 Ethereal Ink. All rights reserved.
+</footer>
+
+</body>
+  </html>
