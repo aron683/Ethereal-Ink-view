@@ -6,113 +6,105 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #000;
       color: #fff;
+    }
+    header {
+      background: linear-gradient(90deg, #00ff77, #00ccff);
+      padding: 40px 20px 20px;
       text-align: center;
-      animation: fadeIn 2s ease-in-out;
-    }header {
-  background: linear-gradient(90deg, #00c853, #00e5ff);
-  padding: 40px 20px 20px;
-  animation: slideIn 1.5s ease-out;
-}
-
-header h1 {
-  font-size: 2.5em;
-  margin: 0;
-}
-
-header h2 {
+      animation: slideIn 1.5s ease-out;
+    }
+    header h1 {
+      font-size: 2.5em;
+    }
+    header h2 {
+      font-size: 1.5em;
+      color: #eee;
+    }
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .gallery img {
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #0f0;
+      opacity: 0;
+      transform: scale(0.9);
+      animation: imageFade 1s forwards;
+    }
+    .gallery img:nth-child(1) { animation-delay: 0.5s; }
+    .gallery img:nth-child(2) { animation-delay: 1s; }
+    .gallery img:nth-child(3) { animation-delay: 1.5s; }
+    .gallery img:nth-child(4) { animation-delay: 2s; }
+    .gallery img:nth-child(5) { animation-delay: 2.5s; }
+    .gallery img:nth-child(6) { animation-delay: 3s; }.description {
+  padding: 20px;
+  text-align: center;
   font-size: 1.2em;
-  font-weight: normal;
+  color: #ccc;
+  animation: fadeIn 2.5s ease-in-out;
 }
-
-p.description {
-  max-width: 700px;
-  margin: 20px auto;
-  font-size: 1.1em;
-  line-height: 1.6;
-  animation: fadeInUp 2s ease-in-out;
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #aaa;
 }
-
-a.btn {
+.whatsapp {
   display: inline-block;
-  margin: 20px auto;
-  padding: 15px 30px;
-  font-weight: bold;
-  font-size: 1em;
-  background-color: #fff;
-  color: #000;
-  border-radius: 30px;
-  text-decoration: none;
-  box-shadow: 0 0 10px #00e676;
-  animation: pulse 2s infinite;
-}
-
-.gallery img {
-  width: 90%;
-  max-width: 400px;
-  margin: 20px auto;
-  display: block;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #00e676;
-  animation: fadeIn 2s ease-in;
-}
-
-a.whatsapp {
-  display: inline-block;
-  margin-top: 30px;
-  font-size: 1.2em;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #25d366;
   color: #fff;
-  background-color: #25D366;
-  padding: 15px 25px;
   text-decoration: none;
-  border-radius: 30px;
   font-weight: bold;
-  box-shadow: 0 0 10px #25D366;
+  border-radius: 25px;
 }
-
 @keyframes slideIn {
   from { transform: translateY(-60px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+@keyframes imageFade {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
   </style>
 </head>
 <body>
-  <audio id="bgMusic" autoplay loop>
-    <source src="Boom.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>  <header>
+  <header>
     <h1>🔥 Ethereal Ink Productions</h1>
     <h2>Creative Design & Development by Tiitseso</h2>
   </header>  <div class="gallery">
-    <img src="titi_is_riding_a_bmw.png" alt="Titi riding a BMW" />
-    <img src="vrega_sbk_cartoon_couples.png" alt="Vrega cartoon couple" />
-    <img src="titi_superhero_green_suit.png" alt="Titi superhero green suit" />
-    <img src="titi_shooing_action.png" alt="Titi shooting action" />
+    <img src="titi_is_riding_a_bmw.png" alt="Titi riding a BMW">
+    <img src="vrega_sbk_cartoon_couples.png" alt="Vrega cartoon couples">
+    <img src="titi_superhero_green_suit.png" alt="Titi superhero">
+    <img src="titi_shooing_action.png" alt="Titi shooting">
+    <img src="coming_soon_banner.png" alt="Coming soon banner">
+    <img src="real_names_image.png" alt="Real Names Photo">
   </div>  <p class="description">
-    We are crafting high-quality visuals, banners, menus, flyers, and digital content with a strong kasi flavor.
-    This project is designed and developed with passion to showcase the best of street visuals. Feel the vibe,
-    explore our creativity, and contact us to create magic together.
-
-<a class="whatsapp" href="https://wa.me/c/27681520470">💬 Chat With Us on WhatsApp</a>
-
+    We are crafting high-quality visuals, banners, menus, flyers, and digital content with a strong kasi flavor. This project is designed and developed with passion to showcase the best of street visuals. Feel the vibe, explore our creativity, and contact us to create magic together.
+  </p>  <section class="animated-text">
+    <h2>Contact Us</h2>
+    <p>Email: EtherealinkbyTiitseso@gmail.com</p>
+    <a class="whatsapp" href="https://wa.me/c/27681520470">Chat With Us on WhatsApp</a>
+  </section>  <footer>
+    &copy; 2025 Ethereal Ink Productions. Built with 🔥 by Tiitseso.
+  </footer>  <audio autoplay loop>
+    <source src="Boom.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 </body>
-</html>
+  </html>
