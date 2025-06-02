@@ -1,86 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ethereal Ink Productions 🔥</title>
   <style>
     body {
       margin: 0;
-      background: linear-gradient(to bottom, #111, #000);
-      color: #fff;
       font-family: 'Segoe UI', sans-serif;
-      overflow-x: hidden;
-    }
-    header {
-      background: #0f0;
-      color: #000;
-      padding: 20px;
-      text-align: center;
-      font-size: 2em;
-      font-weight: bold;
-      animation: slideDown 1.2s ease-out;
-    }
-    @keyframes slideDown {
-      from { transform: translateY(-100px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      animation: fadeIn 2s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #0f0;
-      transition: transform 0.4s ease;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-    .whatsapp-link, .download-link, .email-link {
-      display: block;
-      text-align: center;
-      margin-top: 10px;
-      font-size: 1.2em;
-      color: #0f0;
-      text-decoration: none;
-      animation: fadeIn 2.5s ease-in-out;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #aaa;
-      font-size: 0.9em;
-    }
+      background: #000;
+      color: white;
+    }header {
+  text-align: center;
+  padding: 30px;
+  background: limegreen;
+  font-size: 2em;
+  font-weight: bold;
+  color: black;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.description {
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1.1em;
+  color: #ccc;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 15px;
+}
+
+.gallery img {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px limegreen;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #aaa;
+  font-size: 0.9em;
+}
+
+.whatsapp-link, .download-btn {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1.2em;
+  color: #0f0;
+  text-decoration: none;
+  animation: fadeIn 2.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.music-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: black;
+  color: white;
+  border: 2px solid limegreen;
+  border-radius: 20px;
+  padding: 5px 15px;
+  cursor: pointer;
+  z-index: 999;
+}
+
   </style>
 </head>
-<body>
-
-  <header>ETHEREAL INK PRODUCTIONS 🔥</header>
-
-  <section class="gallery">
-    <img src="titi_is_riding_a_bmw.png" alt="Titi riding a BMW bike">
-    <img src="vrega_sbk_cartoon_couples.png" alt="Vrega SBK cartoon couple walking">
-    <img src="titi_superhero_green_suit.png" alt="Titi in superhero green suit">
+<body>  <header>
+    ETHEREAL INK PRODUCTIONS 🔥
+  </header>  <div class="description">
+    We design and develop striking visuals that transcend the ordinary. From cartoons, posters, and logos to full digital experiences, our work speaks fire 🔥. Let the visuals tell your story.
+  </div>  <!-- Background music -->  <audio id="bgMusic" autoplay loop>
+    <source src="ethereal_ink_intro.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <button class="music-toggle" onclick="toggleMusic()">🔊</button>  <section class="gallery">
+    <img src="titi_is_riding_a_bmw.png" alt="Titi riding a BMW">
+    <img src="vrega_sbk_cartoon_couples.png" alt="Vrega cartoon couple">
+    <img src="titi_superhero_green_suit.png" alt="Titi superhero green suit">
     <img src="titi_shooing_action.png" alt="Titi in shooting action">
     <img src="coming_soon_banner.png" alt="Coming soon banner">
-  </section>
-
-  <a class="whatsapp-link" href="https://wa.me/c/27681520470" target="_blank">Chat to Us on WhatsApp 🔥</a>
-  <a class="download-link" href="https://aron683.github.io/Ethereal-Ink-view/" download>Download 🔥</a>
-  <a class="email-link" href="mailto:etherealinkbytiisetso@gmail.com">Email: Etherealinkbytiisetso@gmail.com</a>
+  </section><a class="whatsapp-link" href="https://wa.me/your-number" target="_blank">💬 Chat on WhatsApp</a> <a class="whatsapp-link" href="mailto:etherealinkbytiisetso@gmail.com">📧 Email: etherealinkbytiisetso@gmail.com</a> <a class="download-btn" href="yourfile.zip" download>⬇️ Download Work 🔥</a>
 
   <footer>
     © 2025 Ethereal Ink. All rights reserved.
-  </footer>
-
-</body>
+  </footer>  <script>
+    function toggleMusic() {
+      const music = document.getElementById('bgMusic');
+      music.muted = !music.muted;
+    }
+  </script></body>
 </html>
