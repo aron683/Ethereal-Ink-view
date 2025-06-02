@@ -1,71 +1,85 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ethereal Ink Productions</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      background-color: #111;
-      color: #fff;
       margin: 0;
-      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #000;
+      color: #fff;
       text-align: center;
+      animation: fadeIn 2s ease-in-out;
     }header {
-  background: linear-gradient(90deg, #00ff84, #00c2ff);
+  background: linear-gradient(90deg, #00c853, #00e5ff);
   padding: 40px 20px 20px;
   animation: slideIn 1.5s ease-out;
 }
 
 header h1 {
-  font-size: 3rem;
+  font-size: 2.5em;
   margin: 0;
 }
 
 header h2 {
-  font-size: 1.4rem;
-  margin-top: 10px;
+  font-size: 1.2em;
+  font-weight: normal;
 }
 
 p.description {
-  padding: 20px;
-  font-size: 1.2rem;
-  animation: fadeIn 2s ease-in-out;
+  max-width: 700px;
+  margin: 20px auto;
+  font-size: 1.1em;
+  line-height: 1.6;
+  animation: fadeInUp 2s ease-in-out;
 }
 
-.btn {
+a.btn {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 15px 30px;
+  font-weight: bold;
+  font-size: 1em;
   background-color: #fff;
   color: #000;
   border-radius: 30px;
-  padding: 15px 30px;
   text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  margin: 20px auto;
+  box-shadow: 0 0 10px #00e676;
   animation: pulse 2s infinite;
 }
 
 .gallery img {
-  width: 80%;
-  margin: 15px 0;
-  border-radius: 12px;
-  box-shadow: 0 0 15px lime;
+  width: 90%;
+  max-width: 400px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00e676;
+  animation: fadeIn 2s ease-in;
 }
 
-.whatsapp {
+a.whatsapp {
   display: inline-block;
-  background-color: #25D366;
+  margin-top: 30px;
+  font-size: 1.2em;
   color: #fff;
-  padding: 15px 30px;
-  border-radius: 30px;
-  font-size: 1.2rem;
+  background-color: #25D366;
+  padding: 15px 25px;
   text-decoration: none;
-  margin-top: 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 0 10px #25D366;
 }
 
 @keyframes slideIn {
   from { transform: translateY(-60px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeIn {
@@ -88,16 +102,18 @@ p.description {
   </audio>  <header>
     <h1>🔥 Ethereal Ink Productions</h1>
     <h2>Creative Design & Development by Tiitseso</h2>
-  </header>  <p class="description">
-    We are crafting high-quality visuals, banners, menus, flyers, and digital content with a strong kasi flavor. This project is designed and developed with passion to showcase the best of street visuals. Feel the vibe, explore our creativity, and contact us to create magic together.
+  </header>  <div class="gallery">
+    <img src="titi_is_riding_a_bmw.png" alt="Titi riding a BMW" />
+    <img src="vrega_sbk_cartoon_couples.png" alt="Vrega cartoon couple" />
+    <img src="titi_superhero_green_suit.png" alt="Titi superhero green suit" />
+    <img src="titi_shooing_action.png" alt="Titi shooting action" />
+  </div>  <p class="description">
+    We are crafting high-quality visuals, banners, menus, flyers, and digital content with a strong kasi flavor.
+    This project is designed and developed with passion to showcase the best of street visuals. Feel the vibe,
+    explore our creativity, and contact us to create magic together.
   </p><a href="/portfolio.pdf" class="btn">🔥 Download Portfolio</a>
 
-  <div class="gallery">
-    <img src="titi_is_riding_a_bmw.png" alt="Titi riding a BMW">
-    <img src="vrega_sbk_cartoon_couples.png" alt="Vrega cartoon couples">
-    <img src="titi_superhero_green_suit.png" alt="Titi superhero green suit">
-    <img src="titi_shooing_action.png" alt="Titi shooting action">
-  </div><a class="whatsapp" href="https://wa.me/c/27681520470">✨ Chat With Us on WhatsApp</a>
+<a class="whatsapp" href="https://wa.me/c/27681520470">💬 Chat With Us on WhatsApp</a>
 
 </body>
 </html>
