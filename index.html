@@ -2,109 +2,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ethereal Ink Productions 🔥</title>
+  <title>Ethereal Ink Productions</title>
   <style>
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #000;
+      padding: 0;
+      background: #0f0f0f;
       color: white;
-    }header {
-  text-align: center;
-  padding: 30px;
-  background: limegreen;
-  font-size: 2em;
-  font-weight: bold;
-  color: black;
-  animation: fadeIn 2s ease-in-out;
-}
-
-.description {
-  text-align: center;
-  margin-top: 10px;
-  padding: 10px;
-  font-size: 1.1em;
-  color: #ccc;
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
-  gap: 15px;
-}
-
-.gallery img {
-  width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px limegreen;
-  transition: transform 0.3s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #aaa;
-  font-size: 0.9em;
-}
-
-.whatsapp-link, .download-btn {
-  display: block;
-  text-align: center;
-  margin-top: 15px;
-  font-size: 1.2em;
-  color: #0f0;
-  text-decoration: none;
-  animation: fadeIn 2.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.music-toggle {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  background: black;
-  color: white;
-  border: 2px solid limegreen;
-  border-radius: 20px;
-  padding: 5px 15px;
-  cursor: pointer;
-  z-index: 999;
-}
-
+      overflow-x: hidden;
+    }
+    header {
+      padding: 40px;
+      background: linear-gradient(90deg, #25D366, #128C7E);
+      text-align: center;
+      animation: slideIn 1.5s ease-out;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      animation: fadeIn 2s ease-in-out;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      animation: fadeInUp 2.5s ease-in-out;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px;
+    }
+    .gallery img {
+      width: 300px;
+      margin: 15px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .description {
+      padding: 30px;
+      text-align: center;
+      line-height: 1.7;
+      max-width: 800px;
+      margin: 0 auto;
+      animation: fadeInUp 2.5s ease-in-out;
+    }
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 999;
+    }
+    .download-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #111;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+    }
+    audio {
+      display: none;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
   </style>
 </head>
-<body>  <header>
-    ETHEREAL INK PRODUCTIONS 🔥
+<body>
+  <header>
+    <h1>🔥 Ethereal Ink Productions</h1>
+    <p>Creative Design & Development by Tiitseso</p>
   </header>  <div class="description">
-    We design and develop striking visuals that transcend the ordinary. From cartoons, posters, and logos to full digital experiences, our work speaks fire 🔥. Let the visuals tell your story.
-  </div>  <!-- Background music -->  <audio id="bgMusic" autoplay loop>
-    <source src="ethereal_ink_intro.mp3" type="audio/mpeg">
+    <p>We are crafting high-quality visuals, banners, menus, flyers, and digital content with a strong kasi flavor. This project is designed and developed with passion to showcase the best of street visuals. Feel the vibe, explore our creativity, and contact us to create magic together.</p>
+    <a class="download-link" href="#">🔥 Download Portfolio</a>
+  </div>  <div class="gallery">
+    <img src="gallery1.jpg" alt="Ethereal Art 1">
+    <img src="gallery2.jpg" alt="Ethereal Art 2">
+    <img src="gallery3.jpg" alt="Ethereal Art 3">
+    <img src="gallery4.jpg" alt="Ethereal Art 4">
+  </div>  <a href="https://wa.me/27681520470" target="_blank" class="whatsapp-btn">
+    💬 Chat With Us on WhatsApp
+  </a>  <audio autoplay loop>
+    <source src="background.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
-  <button class="music-toggle" onclick="toggleMusic()">🔊</button>  <section class="gallery">
-    <img src="titi_is_riding_a_bmw.png" alt="Titi riding a BMW">
-    <img src="vrega_sbk_cartoon_couples.png" alt="Vrega cartoon couple">
-    <img src="titi_superhero_green_suit.png" alt="Titi superhero green suit">
-    <img src="titi_shooing_action.png" alt="Titi in shooting action">
-    <img src="coming_soon_banner.png" alt="Coming soon banner">
-  </section><a class="whatsapp-link" href="https://wa.me/your-number" target="_blank">💬 Chat on WhatsApp</a> <a class="whatsapp-link" href="mailto:etherealinkbytiisetso@gmail.com">📧 Email: etherealinkbytiisetso@gmail.com</a> <a class="download-btn" href="yourfile.zip" download>⬇️ Download Work 🔥</a>
-
-  <footer>
-    © 2025 Ethereal Ink. All rights reserved.
-  </footer>  <script>
-    function toggleMusic() {
-      const music = document.getElementById('bgMusic');
-      music.muted = !music.muted;
-    }
-  </script></body>
+</body>
 </html>
