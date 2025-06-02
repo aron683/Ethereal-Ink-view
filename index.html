@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,28 +6,22 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #000;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #00c853, #000);
       color: #fff;
-      animation: fadeIn 1s ease-in;
-    }
-
-    header {
-      background: linear-gradient(90deg, #00ff88, #00bfff);
-      padding: 40px 20px 20px;
       text-align: center;
-      animation: slideIn 1.5s ease-out;
+      overflow-x: hidden;
     }
-
     header h1 {
       font-size: 2.5em;
+      margin: 0;
+      animation: slideIn 1s ease-out;
     }
-
     header h2 {
       font-size: 1.5em;
-      color: #eee;
+      color: #ccc;
+      animation: fadeIn 2s ease-in-out;
     }
-
     .gallery {
       display: flex;
       flex-direction: column;
@@ -36,7 +29,6 @@
       gap: 20px;
       padding: 20px;
     }
-
     .gallery img {
       width: 300px;
       border-radius: 10px;
@@ -45,103 +37,93 @@
       transform: scale(0.9);
       animation: imageFade 1s forwards;
     }
-
     .gallery img:nth-child(1) { animation-delay: 0.5s; }
     .gallery img:nth-child(2) { animation-delay: 1s; }
     .gallery img:nth-child(3) { animation-delay: 1.5s; }
     .gallery img:nth-child(4) { animation-delay: 2s; }
     .gallery img:nth-child(5) { animation-delay: 2.5s; }
-    .gallery img:nth-child(6) { animation-delay: 3s; }
+    .gallery img:nth-child(6) { animation-delay: 3s; }.description {
+  font-size: 1.2em;
+  color: #ccc;
+  padding: 20px;
+  animation: fadeIn 2.5s ease-in-out;
+}
+footer {
+  padding: 20px;
+  font-size: 0.9em;
+  color: #aaa;
+  animation: fadeIn 2s ease-in-out;
+}
+@keyframes slideIn {
+  from { transform: translateY(-60px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes imageFade {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+#tapToPlay {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #fff;
+  color: #000;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  animation: pulse 1.5s infinite;
+  cursor: pointer;
+  z-index: 9999;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
 
-    .description {
-      text-align: center;
-      font-size: 1.2em;
-      color: #ccc;
-      animation: fadeIn 2.5s ease-in-out;
-      padding: 0 20px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #aaa;
-    }
-
-    .contact-link {
-      display: inline-block;
-      margin-top: 15px;
-      background: #25D366;
-      padding: 12px 25px;
-      border-radius: 30px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      animation: fadeIn 2s ease-in;
-    }
-
-    @keyframes slideIn {
-      from { transform: translateY(-60px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes imageFade {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
   </style>
 </head>
-
 <body>
   <header>
     <h1>🔥 Ethereal Ink Productions</h1>
-    <h2>Creative Design & Development by Tiisetso/h2>
+    <h2>Creative Design & Development by Tiitseso</h2>
   </header>
-
   <div class="gallery">
     <img src="titi_is_riding_a_bmw.png" alt="Titi riding a BMW">
-    <img src="vrega_sbk_cartoon_couples.png" alt="Vrega cartoon couples">
-    <img src="titi_superhero_green_suit.png" alt="Titi superhero green suit">
-    <img src="titi_shooing_action.png" alt="Titi shooting action">
-    <img src="coming_soon_banner.png" alt="Coming soon banner">
+    <img src="vrega_sbk_cartoon_couples.png" alt="Vrega cartoon couple">
+    <img src="titi_superhero_green_suit.png" alt="Titi superhero">
+    <img src="titi_shooing_action.png" alt="Titi shooting">
+    <img src="coming_soon_banner.png" alt="Coming soon">
+    <img src="real_names_image.png" alt="Real Names Photo">
   </div>
-
   <p class="description">
     We are crafting high-quality visuals, banners, menus, flyers, and digital content with a strong kasi flavor. This project is designed and developed with passion to showcase the best of street visuals. Feel the vibe, explore our creativity, and contact us to create magic together.
   </p>
-
   <section class="animated-text">
     <h2>Contact Us</h2>
     <p>Email: EtherealinkbyTiitseso@gmail.com</p>
-    <a class="contact-link" href="https://wa.me/c/27681520470">💬 Chat With Us on WhatsApp</a>
+    <a class="contact-link" href="https://wa.me/c/27681520470">Chat With Us on WhatsApp</a>
   </section>
-
   <footer>
     &copy; 2025 Ethereal Ink Productions. Built with 🔥
-  </footer>
-
-  <audio id="bgMusic" autoplay loop>
+  </footer>  <audio id="bgMusic" autoplay loop muted>
     <source src="Boom.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
-  </audio>
-
-  <script>
-    // Allow autoplay after load (for mobile/device support)
-    window.addEventListener("DOMContentLoaded", () => {
+  </audio>  <div id="tapToPlay">🎵 Tap to Enable Music</div>  <script>
+    document.getElementById("tapToPlay").addEventListener("click", () => {
       const music = document.getElementById("bgMusic");
-      setTimeout(() => {
-        music.play().catch(() => {
-          console.log("Autoplay blocked by browser");
-        });
-      }, 1000);
+      music.muted = false;
+      music.play().then(() => {
+        document.getElementById("tapToPlay").style.display = "none";
+      }).catch(() => {
+        console.log("Autoplay still blocked");
+      });
     });
-  </script>
-</body>
-</html>
+  </script></body>
+  </html>
