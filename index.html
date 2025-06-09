@@ -1,128 +1,208 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ethereal Ink Productions</title>
+  <meta name="description" content="JobSniper X - Find high-paying jobs instantly. Built for fast, smart hustlers by Tiisetso.">
+  <meta name="author" content="Tiisetso Mofokeng" />
+  <meta name="keywords" content="JobSniper, job search, premium jobs, career, employment, South Africa, apply now, Tiisetso" />
+
+  <!-- 🌐 Open Graph -->
+  <meta property="og:title" content="JobSniper X" />
+  <meta property="og:description" content="Find premium jobs with one click. Built for fast hustlers. 🔥" />
+  <meta property="og:image" content="logo.png" />
+  <meta property="og:url" content="https://job.etherealinkbytiisetso.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ✅ Google AdSense Script -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2681951363211497"
+     crossorigin="anonymous"></script>
+
+  <title>JobSniper X</title>
+  <link rel="icon" href="logo.png" />
   <style>
     body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #00c853, #000);
-      color: #fff;
-      text-align: center;
-      overflow-x: hidden;
+      padding: 0;
     }
-    header h1 {
-      font-size: 2.5em;
-      margin: 0;
-      animation: slideIn 1s ease-out;
-    }
-    header h2 {
-      font-size: 1.5em;
-      color: #ccc;
-      animation: fadeIn 2s ease-in-out;
-    }
-    .gallery {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
+    header {
+      background: #004d40;
+      color: white;
       padding: 20px;
+      text-align: center;
     }
-    .gallery img {
-      width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px #0f0;
-      opacity: 0;
-      transform: scale(0.9);
-      animation: imageFade 1s forwards;
+    .logo {
+      height: 60px;
+      margin-bottom: 10px;
     }
-    .gallery img:nth-child(1) { animation-delay: 0.5s; }
-    .gallery img:nth-child(2) { animation-delay: 1s; }
-    .gallery img:nth-child(3) { animation-delay: 1.5s; }
-    .gallery img:nth-child(4) { animation-delay: 2s; }
-    .gallery img:nth-child(5) { animation-delay: 2.5s; }
-    .gallery img:nth-child(6) { animation-delay: 3s; }.description {
-  font-size: 1.2em;
-  color: #ccc;
-  padding: 20px;
-  animation: fadeIn 2.5s ease-in-out;
-}
-footer {
-  padding: 20px;
-  font-size: 0.9em;
-  color: #aaa;
-  animation: fadeIn 2s ease-in-out;
-}
-@keyframes slideIn {
-  from { transform: translateY(-60px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes imageFade {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-#tapToPlay {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #fff;
-  color: #000;
-  padding: 10px 15px;
-  border-radius: 10px;
-  font-weight: bold;
-  animation: pulse 1.5s infinite;
-  cursor: pointer;
-  z-index: 9999;
-}
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin: 20px;
+    }
+    .search-bar input {
+      padding: 10px;
+      width: 60%;
+      border-radius: 5px 0 0 5px;
+      border: 1px solid #ccc;
+    }
+    .search-bar button {
+      padding: 10px 20px;
+      background: #009688;
+      color: white;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+    .job-card {
+      background: white;
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 600px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .job-card h3 {
+      margin: 0;
+      color: #00796b;
+    }
+    .job-card p {
+      margin: 5px 0;
+    }
+    .job-card button {
+      padding: 8px 15px;
+      border: none;
+      background: #00796b;
+      color: white;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .ads-container, .referral-link {
+      text-align: center;
+      margin: 20px auto;
+    }
+    .referral-link a {
+      background: #009688;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #e0e0e0;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>🔥 Ethereal Ink Productions</h1>
-    <h2>Creative Design & Development by Tiisetso</h2>
+    <img src="logo.png" alt="JobSniper Logo" class="logo" />
+    <h1>JobSniper X</h1>
+    <p>Sniping premium jobs for you – fast and smart</p>
   </header>
-  <div class="gallery">
-    <img src="titi_is_riding_a_bmw.png" alt="Titi riding a BMW">
-    <img src="vrega_sbk_cartoon_couples.png" alt="Vrega cartoon couple">
-    <img src="titi_superhero_green_suit.png" alt="Titi superhero">
-    <img src="titi_shooing_action.png" alt="Titi shooting">
-    <img src="coming_soon_banner.png" alt="Coming soon">
+
+  <!-- 🔍 Search Section -->
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search job title like developer, designer, security..." />
+    <button onclick="fetchJobs()">Search</button>
   </div>
-  <p class="description">
-    We are crafting from scratch to high-quality visuals, banners, menus, website developer, flyers, digital content with a strong kasi flavor! You name it 🔥 . This project is designed and developed with passion to showcase the best of street $ international visuals . Feel the vibe, explore our creativity, and contact us to create magic together.
-  </p>
-  <section class="animated-text">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:Etherealinkbytiisetso@gmail.com">Etherealinkbytiisetso@gmail.com</a></p>
-    <a class="contact-link" href="https://wa.me/c/27681520470">Chat With Us on WhatsApp</a>
-  </section>
+
+  <!-- 💸 Monetized ShrinkMe CTA -->
+  <div class="referral-link">
+    <a href="https://tpi.li/6Pp" target="_blank">
+      🚀 Unlock Hidden Jobs Database – Tap Here
+    </a>
+  </div>
+
+  <!-- 📢 Google AdSense Banner Ad -->
+  <div class="ads-container">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2681951363211497"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+  <!-- 🔽 Job Results -->
+  <div id="results"></div>
+
   <footer>
-    &copy; 2025 Ethereal Ink Productions. Built with 🔥
-  </footer>  <audio id="bgMusic" autoplay loop muted>
-    <source src="Boom.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>  <div id="tapToPlay">🎵 Tap to Enable Music</div>  <script>
-    document.getElementById("tapToPlay").addEventListener("click", () => {
-      const music = document.getElementById("bgMusic");
-      music.muted = false;
-      music.play().then(() => {
-        document.getElementById("tapToPlay").style.display = "none";
-      }).catch(() => {
-        console.log("Autoplay still blocked");
-      });
-    });
-  </script></body>
-  </html>
+    Powered by Tiisetso 🧠 | © 2025 JobSniper X
+  </footer>
+
+  <!-- 🔗 Final ShrinkMe Link -->
+  <div class="referral-link">
+    <a href="https://tpi.li/6Pp" target="_blank">
+      💼 Premium Job Leads Shared by Recruiters – Click to Access
+    </a>
+  </div>
+
+  <script>
+    async function fetchJobs(term) {
+      const searchTerm = term || document.getElementById('searchInput').value;
+      const resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = '<p>Loading jobs...</p>';
+
+      const url = `https://jsearch.p.rapidapi.com/search?query=${encodeURIComponent(searchTerm)}&page=1&num_pages=1`;
+
+      const options = {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key': 'be05ad0d85mshe8a36833da7731ep19fffbjsne1c412115bbc',
+          'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
+        }
+      };
+
+      try {
+        const response = await fetch(url, options);
+        const data = await response.json();
+        resultsDiv.innerHTML = '';
+
+        if (data.data.length === 0) {
+          resultsDiv.innerHTML = '<p>No jobs found. Try another keyword.</p>';
+          return;
+        }
+
+        data.data.forEach(job => {
+          const card = document.createElement('div');
+          card.className = 'job-card';
+          card.innerHTML = `
+            <h3>${job.job_title}</h3>
+            <p><strong>Company:</strong> ${job.employer_name}</p>
+            <p><strong>Location:</strong> ${job.job_city || 'N/A'}, ${job.job_country || ''}</p>
+            <p>${job.job_description.substring(0, 180)}...</p>
+            <a href="${job.job_apply_link}" target="_blank">
+              <button>Apply Now</button>
+            </a>
+          `;
+          resultsDiv.appendChild(card);
+        });
+
+        // 👇 Add extra CTA after results
+        const more = document.createElement('div');
+        more.className = "referral-link";
+        more.innerHTML = `<a href="https://tpi.li/6Pp" target="_blank">🔥 Get the Secret Job List – Tap to View</a>`;
+        resultsDiv.appendChild(more);
+
+      } catch (error) {
+        resultsDiv.innerHTML = '<p>Error loading jobs. Please try again later.</p>';
+      }
+    }
+
+    // Auto load with "developer" jobs on open
+    window.onload = () => {
+      fetchJobs('developer');
+    };
+  </script>
+</body>
+</html>
