@@ -1,208 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="JobSniper X - Find high-paying jobs instantly. Built for fast, smart hustlers by Tiisetso.">
+  <meta name="description" content="Download V75 Forex Bots: FlipMasterX, Sniper Combo, Breakout Entry, and more. Safe, powerful, instant access via Gumroad." />
+  <meta name="keywords" content="V75 Forex Bots, FlipMasterX, Sniper Bot, Breakout Bot, MT5, MT4, Volatility 75, PDF Guide, Gumroad" />
   <meta name="author" content="Tiisetso Mofokeng" />
-  <meta name="keywords" content="JobSniper, job search, premium jobs, career, employment, South Africa, apply now, Tiisetso" />
-
-  <!-- 🌐 Open Graph -->
-  <meta property="og:title" content="JobSniper X" />
-  <meta property="og:description" content="Find premium jobs with one click. Built for fast hustlers. 🔥" />
-  <meta property="og:image" content="logo.png" />
-  <meta property="og:url" content="https://job.etherealinkbytiisetso.com" />
+  <meta property="og:title" content="🔥 V75 Bot Mega Pack – Only R1000" />
+  <meta property="og:description" content="Grab all 4 bots + PDF Guide. Secure payment via Gumroad. Limited offer!" />
+  <meta property="og:image" content="snipe1.png" />
+  <meta property="og:url" content="https://etherealink.gumroad.com/l/sqladi" />
   <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- ✅ Google AdSense Script -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2681951363211497"
-     crossorigin="anonymous"></script>
-
-  <title>JobSniper X</title>
-  <link rel="icon" href="logo.png" />
+  <title>🔥 V75 Bot Mega Pack – Only R1000</title>
+  <link rel="icon" href="snipe1.png" />
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #004d40;
-      color: white;
-      padding: 20px;
+      background: #000;
+      color: #0f0;
       text-align: center;
+      padding: 2rem;
     }
-    .logo {
-      height: 60px;
-      margin-bottom: 10px;
+    h1 {
+      font-size: 2rem;
+      color: #00ff99;
     }
-    .search-bar {
+    .carousel {
       display: flex;
+      gap: 12px;
+      overflow-x: auto;
       justify-content: center;
-      margin: 20px;
+      margin: 1rem 0 2rem 0;
+      padding-bottom: 0.5rem;
     }
-    .search-bar input {
-      padding: 10px;
-      width: 60%;
-      border-radius: 5px 0 0 5px;
-      border: 1px solid #ccc;
+    .carousel img {
+      height: 150px;
+      border-radius: 12px;
     }
-    .search-bar button {
-      padding: 10px 20px;
-      background: #009688;
-      color: white;
-      border: none;
-      border-radius: 0 5px 5px 0;
-      cursor: pointer;
-    }
-    .job-card {
-      background: white;
-      margin: 20px auto;
-      padding: 20px;
-      max-width: 600px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .job-card h3 {
-      margin: 0;
-      color: #00796b;
-    }
-    .job-card p {
-      margin: 5px 0;
-    }
-    .job-card button {
-      padding: 8px 15px;
-      border: none;
-      background: #00796b;
-      color: white;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
-    .ads-container, .referral-link {
-      text-align: center;
-      margin: 20px auto;
-    }
-    .referral-link a {
-      background: #009688;
-      color: white;
-      padding: 12px 20px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
+    .bundle {
+      background: #111;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #0f0;
       display: inline-block;
+      max-width: 500px;
+    }
+    .bundle p {
+      font-size: 1.1rem;
+      margin: 1rem 0;
+    }
+    .buy-btn {
+      background: #00ff99;
+      color: #000;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
     }
     footer {
-      text-align: center;
-      padding: 20px;
-      background: #e0e0e0;
-      font-size: 14px;
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="JobSniper Logo" class="logo" />
-    <h1>JobSniper X</h1>
-    <p>Sniping premium jobs for you – fast and smart</p>
-  </header>
-
-  <!-- 🔍 Search Section -->
-  <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="Search job title like developer, designer, security..." />
-    <button onclick="fetchJobs()">Search</button>
-  </div>
-
-  <!-- 💸 Monetized ShrinkMe CTA -->
-  <div class="referral-link">
-    <a href="https://tpi.li/6Pp" target="_blank">
-      🚀 Unlock Hidden Jobs Database – Tap Here
-    </a>
-  </div>
-
-  <!-- 📢 Google AdSense Banner Ad -->
-  <div class="ads-container">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-2681951363211497"
-         data-ad-slot="1234567890"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-
-  <!-- 🔽 Job Results -->
-  <div id="results"></div>
-
-  <footer>
-    Powered by Tiisetso 🧠 | © 2025 JobSniper X
-  </footer>
-
-  <!-- 🔗 Final ShrinkMe Link -->
-  <div class="referral-link">
-    <a href="https://tpi.li/6Pp" target="_blank">
-      💼 Premium Job Leads Shared by Recruiters – Click to Access
-    </a>
-  </div>
-
-  <script>
-    async function fetchJobs(term) {
-      const searchTerm = term || document.getElementById('searchInput').value;
-      const resultsDiv = document.getElementById('results');
-      resultsDiv.innerHTML = '<p>Loading jobs...</p>';
-
-      const url = `https://jsearch.p.rapidapi.com/search?query=${encodeURIComponent(searchTerm)}&page=1&num_pages=1`;
-
-      const options = {
-        method: 'GET',
-        headers: {
-          'X-RapidAPI-Key': 'be05ad0d85mshe8a36833da7731ep19fffbjsne1c412115bbc',
-          'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
-        }
-      };
-
-      try {
-        const response = await fetch(url, options);
-        const data = await response.json();
-        resultsDiv.innerHTML = '';
-
-        if (data.data.length === 0) {
-          resultsDiv.innerHTML = '<p>No jobs found. Try another keyword.</p>';
-          return;
-        }
-
-        data.data.forEach(job => {
-          const card = document.createElement('div');
-          card.className = 'job-card';
-          card.innerHTML = `
-            <h3>${job.job_title}</h3>
-            <p><strong>Company:</strong> ${job.employer_name}</p>
-            <p><strong>Location:</strong> ${job.job_city || 'N/A'}, ${job.job_country || ''}</p>
-            <p>${job.job_description.substring(0, 180)}...</p>
-            <a href="${job.job_apply_link}" target="_blank">
-              <button>Apply Now</button>
-            </a>
-          `;
-          resultsDiv.appendChild(card);
-        });
-
-        // 👇 Add extra CTA after results
-        const more = document.createElement('div');
-        more.className = "referral-link";
-        more.innerHTML = `<a href="https://tpi.li/6Pp" target="_blank">🔥 Get the Secret Job List – Tap to View</a>`;
-        resultsDiv.appendChild(more);
-
-      } catch (error) {
-        resultsDiv.innerHTML = '<p>Error loading jobs. Please try again later.</p>';
-      }
-    }
-
-    // Auto load with "developer" jobs on open
-    window.onload = () => {
-      fetchJobs('developer');
-    };
-  </script>
-</body>
+<h1>💼 V75 Bots: FlipMasterX + Sniper + Breakout + PDF Guide</h1><!-- 🔥 Image Carousel --><div class="carousel">
+  <img src="snipe1.png" alt="Preview 1">
+  <img src="snipe2.jpg" alt="Preview 2">
+  <img src="snipe3.jpg" alt="Preview 3">
+  <img src="snipe4.png" alt="Preview 4">
+</div><!-- 💰 Bundle Info --><div class="bundle">
+  <p>📦 Includes:</p>
+  <p>✅ FlipMasterX</p>
+  <p>✅ Sniper Combo</p>
+  <p>✅ Breakout Auto Entry</p>
+  <p>📘 PDF Strategy Guide + Cheat Sheet</p>
+  <p>💼 One-Time Payment Only – R1000</p>
+  <a href="https://etherealink.gumroad.com/l/sqladi" class="buy-btn">🔥 Buy Now – R1000</a>
+</div><!-- 📧 Contact Info --><footer>
+  <p>Questions? Email <strong>forex@etherealinkbytiisetso.com</strong></p>
+  <p>&copy; 2025 V75 Bots by Tiisetso Mofokeng. All rights reserved.</p>
+</footer></body>
 </html>
