@@ -448,5 +448,18 @@
     return "Sorry, I don't understand that math question yet. Try simpler expressions, equations, or use keywords like solve, derivative, integrate, determinant, complex, trig, plot.";
   }
 
-  // Ask handler
+  // Ask handler - called when user submits a question
   function ask() {
+    const question = input.value.trim();
+    if (!question) return;
+    addMessage(question, 'user');
+    input.value = '';
+
+    setTimeout(() => {
+      const answer = mathAnswer(question);
+      addMessage(answer, 'bot');
+    }, 400);
+  }
+
+  // Hook up buttons and enter key to ask()
+  sendBtn.addEventListener
