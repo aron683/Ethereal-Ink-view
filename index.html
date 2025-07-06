@@ -83,17 +83,6 @@
     background: #ff3b3b;
     box-shadow: 0 0 10px 3px #ff3b3b;
   }
-  pre {
-    background: #111;
-    border-radius: 8px;
-    padding: 12px;
-    overflow-x: auto;
-    font-family: monospace;
-  }
-  a {
-    color: #82c91e;
-    text-decoration: underline;
-  }
   #plot {
     margin-top: 20px;
   }
@@ -126,7 +115,6 @@
   const micBtn = document.getElementById('mic-btn');
   const plotDiv = document.getElementById('plot');
 
-  // Add message to chat window
   function addMessage(text, sender) {
     const div = document.createElement('div');
     div.classList.add('msg', sender);
@@ -135,21 +123,16 @@
     chat.scrollTop = chat.scrollHeight;
   }
 
-  // Clear plot
   function clearPlot() {
     Plotly.purge(plotDiv);
     plotDiv.innerHTML = '';
   }
 
-  // Plot function f(x)
   function plotFunction(expr) {
     clearPlot();
-
     let xVals = [];
     let yVals = [];
     const mathScope = {x: 0};
-
-    // Create function with math.js
     let f;
     try {
       f = math.compile(expr);
@@ -157,7 +140,6 @@
       addMessage("❌ Error parsing function for plotting.", 'bot');
       return;
     }
-
     for(let x=-10; x<=10; x+=0.1) {
       mathScope.x = x;
       try {
@@ -166,11 +148,8 @@
           xVals.push(x);
           yVals.push(y);
         }
-      } catch {
-        // skip invalid points
-      }
+      } catch {}
     }
-
     let data = [{
       x: xVals,
       y: yVals,
@@ -178,7 +157,6 @@
       mode: 'lines',
       line: {color: '#82c91e'}
     }];
-
     let layout = {
       title: `Graph of y = ${expr}`,
       paper_bgcolor: '#222',
@@ -186,11 +164,9 @@
       font: {color: '#eee'},
       margin: {t: 40, b: 40, l: 50, r: 20}
     };
-
     Plotly.newPlot(plotDiv, data, layout, {responsive: true});
   }
 
-  // Step-by-step explanation templates for main tasks
   function getStepByStepExplanation(type, expr) {
     switch(type) {
       case 'solve':
@@ -230,7 +206,6 @@
     }
   }
 
-  // Parse matrix string to 2D array
   function parseMatrix(str) {
     try {
       let arr = JSON.parse(str.replace(/'/g,'"'));
@@ -244,7 +219,6 @@
     }
   }
 
-  // Complex number operations using nerdamer
   function complexOperation(op, c1Str, c2Str) {
     try {
       let c1 = nerdamer(c1Str);
@@ -262,7 +236,6 @@
     }
   }
 
-  // Solve system of linear equations (2 or 3 variables)
   function solveSystem(equations) {
     try {
       const varsSet = new Set();
@@ -305,7 +278,6 @@
     }
   }
 
-  // Trig identity check and simplification
   function trigIdentityCheck(expr) {
     try {
       let simp = nerdamer(expr).expand().toString();
@@ -315,7 +287,6 @@
     }
   }
 
-  // Main math answer function
   function mathAnswer(question) {
     question = question.trim();
     const qLower = question.toLowerCase();
@@ -461,5 +432,20 @@
     }, 400);
   }
 
-  // Hook up buttons and enter key to ask()
-  sendBtn.addEventListener
+  // Event listeners for buttons and input
+  sendBtn.addEventListener('click', ask);
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') ask();
+  });
+
+  // Voice recognition setup
+  let recognition;
+  let recognizing = false;
+
+  if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+    micBtn.style.display = 'none'; // hide mic if not supported
+    addMessage("⚠️ Voice input not supported in this browser.", 'bot');
+  } else {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    recognition = new SpeechRecognition();
+    recognition
