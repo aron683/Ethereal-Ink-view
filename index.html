@@ -1,165 +1,201 @@
-<!-- Save this as index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ethereal Ink Studios</title>
-  <meta name="description" content="Welcome to Ethereal Ink Studios - Your premium hub for JobSniper X and Forex bots. Sniping jobs and trades with AI power." />
+  <title>JobSniper X | Talking AI Hustler Bot</title>
+  <meta name="description" content="JobSniper X with AI voice assistant. Powered by browser speech synthesis." />
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #042927;
-      color: #e0f2f1;
-      margin: 0; padding: 0;
-      display: flex; flex-direction: column;
-      min-height: 100vh;
-    }
-    header {
-      background: #004440;
-      padding: 30px 20px;
-      text-align: center;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-    }
-    header h1 {
-      margin: 0; font-size: 2.5rem;
-      letter-spacing: 2px;
-    }
-    header p {
-      margin: 5px 0 0;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: #a3d9d0;
-    }
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 40px 20px;
-      gap: 30px;
-      background: linear-gradient(135deg, #004440 0%, #007a66 100%);
-    }
-    .btn {
-      display: inline-block;
-      padding: 18px 32px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: #004440;
-      background: #a3d9d0;
-      box-shadow: 0 5px 12px rgba(163, 217, 208, 0.6);
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-    }
-    .btn:hover {
-      background: #72cfc2;
-      box-shadow: 0 8px 20px rgba(114, 207, 194, 0.8);
-    }
-    footer {
-      background: #004440;
-      text-align: center;
-      padding: 20px 15px;
-      font-size: 0.9rem;
-      color: #a3d9d0;
-      user-select: none;
-    }
-    /* Bot styling */
-    #botBox {
-      position: fixed;
-      bottom: 25px;
-      right: 20px;
-      width: 280px;
-      background: #a3d9d0;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-      padding: 12px 18px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #004440;
-      font-size: 14px;
-      z-index: 9999;
-    }
-    #chatLog {
-      max-height: 100px;
-      overflow-y: auto;
-      margin-bottom: 8px;
-      background: white;
-      border-radius: 10px;
-      padding: 8px 12px;
-      color: #004440;
-      font-size: 13px;
-      line-height: 1.2;
-    }
-    #chatInput {
-      width: 100%;
-      padding: 8px 10px;
-      border: none;
-      border-radius: 10px;
-      font-size: 14px;
-      box-sizing: border-box;
-      outline: none;
-    }
+    body { font-family: Arial, sans-serif; background: #f0f0f0; margin: 0; padding: 0; }
+    header, footer { background: #004440; color: white; text-align: center; padding: 20px; }
+    #results { padding: 10px; }
+    .job-card { background: white; margin: 10px 0; padding: 15px; border-left: 4px solid #004440; border-radius: 4px; }
+    .job-card a { color: #004440; text-decoration: none; font-weight: bold; }
+    .job-card a:hover { text-decoration: underline; }
+    #liveViewers { position: fixed; bottom: 15px; left: 15px; background: #004440; color: white; padding: 5px 10px; border-radius: 5px; }
+    #botBox { position: fixed; bottom: 75px; right: 15px; width: 280px; background: #fff; border: 2px solid #004440; border-radius: 10px; box-shadow: 0 0 10px #aaa; padding: 10px; font-size: 14px; z-index: 9999; }
+    #chatLog { max-height: 100px; overflow-y: auto; font-size: 14px; margin-top: 5px; }
+    #chatInput { width: 100%; margin-top: 5px; padding: 5px; border: 1px solid #ccc; border-radius: 5px; }
+    #langBox { position: fixed; bottom: 140px; right: 20px; font-size: 14px; background: white; padding: 5px; border: 1px solid #ccc; border-radius: 5px; z-index: 9999; }
+    #searchBox { padding: 15px; text-align: center; background: #fff; }
+    #searchInput { width: 90%; padding: 10px; font-size: 16px; border-radius: 8px; border: 1px solid #004440; }
   </style>
 </head>
 <body>
-
 <header>
-  <h1>Ethereal Ink Studios</h1>
-  <p>Home of JobSniper X & Forex Bots — Powered by AI</p>
+  <h1>JobSniper X</h1>
+  <p>Sniping real jobs fast with AI voice assistant!</p>
 </header>
 
-<main>
-  <a href="https://job.etherealinkbytiisetso.com" class="btn" target="_blank" rel="noopener">🚀 JobSniper X (Jobs Hub)</a>
-  <a href="https://forex.etherealinkbytiisetso.com" class="btn" target="_blank" rel="noopener">💹 Forex Bot Hub</a>
-</main>
-
-<!-- AI Bot assistant -->
-<div id="botBox">
-  <strong>💬 Ask Ethereal Bot</strong>
-  <div id="chatLog">Hi! Ask me about Ethereal Ink, JobSniper, Forex bot, or how to use this site.</div>
-  <input type="text" id="chatInput" placeholder="Ask something..." onkeydown="if(event.key==='Enter') etherealBot()">
+<div id="searchBox">
+  <input type="text" id="searchInput" placeholder="🔍 Search job titles (e.g. driver, admin, remote)" />
 </div>
 
+<div id="results">⏳ Loading jobs...</div>
+
 <footer>
-  © 2025 Ethereal Ink Studios | Contact: <a href="mailto:etherealinkbytiisetso@gmail.com" style="color:#a3d9d0; text-decoration: underline;">etherealinkbytiisetso@gmail.com</a>
+  <span id="liveViewers">100 people viewing now</span><br />
+  Built by Tiisetso | © 2025 JobSniper X<br />
+  Monetized via ShrinkMe | Powered by RapidAPI & Talking AI Bot<br />
+  📧 Contact: etherealinkbytiisetso@gmail.com
 </footer>
 
+<!-- Language selector -->
+<div id="langBox">
+  🌐 Language:
+  <select id="langSelect">
+    <option value="en">English</option>
+    <option value="zu">Zulu</option>
+    <option value="st">Sesotho</option>
+    <option value="xh">Xhosa</option>
+    <option value="af">Afrikaans</option>
+  </select>
+</div>
+
+<!-- Bot assistant -->
+<div id="botBox">
+  <strong>💬 Talk to JobBot</strong>
+  <div id="chatLog">Hi! Ask me how to apply or search jobs.</div>
+  <input type="text" id="chatInput" placeholder="Ask something..." onkeydown="if(event.key==='Enter') jobBot()" />
+</div>
+
 <script>
-const chatLog = document.getElementById('chatLog');
-const chatInput = document.getElementById('chatInput');
+const RAPID_API_KEY = "be05ad0d85mshe8a36833da7731ep19fffbjsne1c412115bbc";
+const resultsDiv = document.getElementById("results");
+const chatLog = document.getElementById("chatLog");
+const synth = window.speechSynthesis;
 
-const knowledge = {
-  hello: "Hello! Welcome to Ethereal Ink Studios. How can I help you today?",
-  job: "You can visit JobSniper X for the latest job listings: https://job.etherealinkbytiisetso.com",
-  forex: "Check out our Forex Bot Hub here: https://forex.etherealinkbytiisetso.com",
-  email: "You can reach us anytime at etherealinkbytiisetso@gmail.com",
-  help: "Just ask me anything about Ethereal Ink, JobSniper X, or Forex Bots!",
-  links: "Our main links are JobSniper X and Forex Bot Hub, both listed on this page.",
-  default: "Sorry, I didn't quite get that. Try asking about jobs, forex, or contact info."
-};
-
-function etherealBot() {
-  const userText = chatInput.value.toLowerCase().trim();
-  if (!userText) return;
-
-  chatLog.innerHTML += `<div><strong>You:</strong> ${chatInput.value}</div>`;
-  chatInput.value = "";
-
-  let response = knowledge.default;
-
-  for (const key in knowledge) {
-    if (userText.includes(key)) {
-      response = knowledge[key];
-      break;
+async function fetchJobs(query = "driver") {
+  resultsDiv.innerHTML = `⏳ Searching for '${query}'...`;
+  try {
+    const res = await fetch(`https://jsearch.p.rapidapi.com/search?query=${encodeURIComponent(query)}&num_pages=1`, {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": RAPID_API_KEY,
+        "X-RapidAPI-Host": "jsearch.p.rapidapi.com"
+      }
+    });
+    const data = await res.json();
+    const jobs = data.data || [];
+    if (jobs.length === 0) {
+      resultsDiv.innerHTML = "❌ No jobs found.";
+      speakText("Sorry, no jobs found for your search.");
+      return;
     }
+    resultsDiv.innerHTML = "";
+    jobs.forEach((job, i) => {
+      const premium = i % 2 === 0 ? `✅ PREMIUM – <a href="https://shrinkme.ink/TGmiWcp" target="_blank">Unlock</a>` : "FREE";
+      resultsDiv.innerHTML += `
+        <div class="job-card">
+          <h3>${job.job_title}</h3>
+          <p><strong>Company:</strong> ${job.employer_name}</p>
+          <p><strong>Location:</strong> ${job.job_city || 'Anywhere'}</p>
+          <p><strong>Level:</strong> ${premium}</p>
+          <a href="${job.job_apply_link}" target="_blank" rel="noopener noreferrer">Apply Now</a>
+        </div>
+      `;
+    });
+    speakText(`I found ${jobs.length} jobs for ${query}. Scroll down to see them.`);
+  } catch (e) {
+    resultsDiv.innerHTML = "⚠️ Could not load jobs. Try again later.";
+    speakText("Oops, I couldn't load jobs right now. Please try again later.");
   }
+}
+
+function speakText(text) {
+  if (!synth) return; // Not supported
+  if (synth.speaking) synth.cancel(); // Cancel any ongoing
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = getLangCode();
+  synth.speak(utter);
+}
+
+function getLangCode() {
+  const lang = document.getElementById("langSelect").value;
+  switch(lang) {
+    case "zu": return "zu-ZA";
+    case "st": return "st-ZA";
+    case "xh": return "xh-ZA";
+    case "af": return "af-ZA";
+    default: return "en-US";
+  }
+}
+
+// Live viewers count animation
+let viewers = Math.floor(Math.random() * 50) + 100;
+setInterval(() => {
+  viewers += Math.floor(Math.random() * 3);
+  document.getElementById("liveViewers").textContent = viewers + " people viewing now";
+}, 8000);
+
+// Bot responses
+function jobBot() {
+  const user = document.getElementById("chatInput").value.toLowerCase();
+  if (!user) return;
+  chatLog.innerHTML += `<div><strong>You:</strong> ${user}</div>`;
+  chatLog.scrollTop = chatLog.scrollHeight;
+  document.getElementById("chatInput").value = "";
+
+  const lang = document.getElementById("langSelect").value;
+  const responses = {
+    en: {
+      apply: "📝 Tap 'Apply Now' under the job you want.",
+      driver: "🚕 Try searching 'driver', 'admin', or 'remote' jobs above.",
+      help: "💬 I'm here to help! Ask me anything about jobs.",
+      premium: "🔓 Unlock premium jobs by clicking the unlock link.",
+      contact: "📩 Contact us at etherealinkbytiisetso@gmail.com",
+      default: "🤖 Ask me about jobs, applying, or premium features."
+    },
+    zu: {
+      apply: "📝 Chofoza 'Apply Now' ngaphansi komsebenzi.",
+      driver: "🚕 Sesha 'driver', 'admin', noma 'remote' ngaphezulu.",
+      help: "💬 Ngikhona ukukusiza! Buza nganoma yini mayelana nemisebenzi.",
+      premium: "🔓 Imisebenzi ye-premium idinga ukuvula isixhumanisi.",
+      contact: "📩 Xhumana nathi ku etherealinkbytiisetso@gmail.com",
+      default: "🤖 Buza mayelana nemisebenzi noma izici ze-premium."
+    },
+    st: {
+      apply: "📝 Tobetsa 'Apply Now' tlasa mosebetsi.",
+      driver: "🚕 Batla 'driver', 'admin', kapa 'remote' holimo.",
+      help: "💬 Ke mona ho thusa! Botsa ka mesebetsi efe kapa efe.",
+      premium: "🔓 Mesebetsi ea premium e hloka ho bula sehokelo.",
+      contact: "📩 Iteanye le rona ho etherealinkbytiisetso@gmail.com",
+      default: "🤖 Botsa ka mesebetsi kapa likarolo tsa premium."
+    },
+    xh: {
+      apply: "📝 Cofa 'Apply Now' phantsi komsebenzi.",
+      driver: "🚕 Khangela 'driver', 'admin', okanye 'remote' ngasentla.",
+      help: "💬 Ndilapha ukukunceda! Buza nantoni na malunga nemisebenzi.",
+      premium: "🔓 Imisebenzi ye-premium ifuna ukuvula ikhonkco.",
+      contact: "📩 Qhagamshelana nathi ku etherealinkbytiisetso@gmail.com",
+      default: "🤖 Buza ngemisebenzi okanye iimpawu ze-premium."
+    },
+    af: {
+      apply: "📝 Klik 'Apply Now' onder die werk.",
+      driver: "🚕 Soek 'driver', 'admin', of 'remote' bo.",
+      help: "💬 Ek is hier om te help! Vra oor enige werk.",
+      premium: "🔓 Premium poste moet ontsluit word.",
+      contact: "📩 Kontak ons by etherealinkbytiisetso@gmail.com",
+      default: "🤖 Vra oor werksgeleenthede of premium funksies."
+    }
+  };
+
+  const replySet = responses[lang] || responses.en;
+  let response = replySet.default;
+
+  if (/apply|application|send|submit/.test(user)) response = replySet.apply;
+  else if (/driver|admin|remote/.test(user)) response = replySet.driver;
+  else if (/help|support|how/.test(user)) response = replySet.help;
+  else if (/premium|unlock|paid/.test(user)) response = replySet.premium;
+  else if (/contact|email|support/.test(user)) response = replySet.contact;
 
   chatLog.innerHTML += `<div><strong>Bot:</strong> ${response}</div><br>`;
+  speakText(response);
   chatLog.scrollTop = chatLog.scrollHeight;
 }
-</script>
 
+// Load default jobs on page load
+fetchJobs();
+</script>
 </body>
-  </html>
+</html>
