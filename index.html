@@ -1,451 +1,165 @@
+<!-- Save this as index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ultimate Diploma-Level Offline Math Bot with Voice</title>
-<style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    max-width: 720px;
-    margin: 40px auto;
-    background: #121212;
-    color: #eee;
-    padding: 20px;
-  }
-  h1 {
-    text-align: center;
-    margin-bottom: 1rem;
-    color: #82c91e;
-    text-shadow: 0 0 8px #95e058;
-  }
-  #chat {
-    background: #222;
-    border: 1px solid #444;
-    border-radius: 10px;
-    height: 480px;
-    padding: 15px;
-    overflow-y: auto;
-    box-shadow: inset 0 0 10px #000;
-  }
-  .msg {
-    margin: 12px 0;
-    line-height: 1.4;
-  }
-  .user {
-    color: #82c91e;
-    font-weight: 600;
-  }
-  .bot {
-    color: #74c0fc;
-    white-space: pre-wrap;
-  }
-  #input-area {
-    margin-top: 15px;
-    display: flex;
-    align-items: center;
-  }
-  #input {
-    flex-grow: 1;
-    font-size: 18px;
-    padding: 12px;
-    border-radius: 8px 0 0 8px;
-    border: none;
-    outline: none;
-  }
-  #send-btn {
-    background: #82c91e;
-    border: none;
-    color: black;
-    font-weight: 700;
-    padding: 12px 20px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 0 8px 8px 0;
-    transition: background 0.3s ease;
-  }
-  #send-btn:hover {
-    background: #95e058;
-  }
-  #mic-btn {
-    background: #ff6b6b;
-    border: none;
-    color: white;
-    font-weight: 700;
-    padding: 12px 16px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 8px;
-    margin-left: 10px;
-    transition: background 0.3s ease;
-  }
-  #mic-btn.listening {
-    background: #ff3b3b;
-    box-shadow: 0 0 10px 3px #ff3b3b;
-  }
-  #plot {
-    margin-top: 20px;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ethereal Ink Studios</title>
+  <meta name="description" content="Welcome to Ethereal Ink Studios - Your premium hub for JobSniper X and Forex bots. Sniping jobs and trades with AI power." />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #042927;
+      color: #e0f2f1;
+      margin: 0; padding: 0;
+      display: flex; flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: #004440;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      margin: 0; font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #a3d9d0;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      gap: 30px;
+      background: linear-gradient(135deg, #004440 0%, #007a66 100%);
+    }
+    .btn {
+      display: inline-block;
+      padding: 18px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #004440;
+      background: #a3d9d0;
+      box-shadow: 0 5px 12px rgba(163, 217, 208, 0.6);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    .btn:hover {
+      background: #72cfc2;
+      box-shadow: 0 8px 20px rgba(114, 207, 194, 0.8);
+    }
+    footer {
+      background: #004440;
+      text-align: center;
+      padding: 20px 15px;
+      font-size: 0.9rem;
+      color: #a3d9d0;
+      user-select: none;
+    }
+    /* Bot styling */
+    #botBox {
+      position: fixed;
+      bottom: 25px;
+      right: 20px;
+      width: 280px;
+      background: #a3d9d0;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      padding: 12px 18px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #004440;
+      font-size: 14px;
+      z-index: 9999;
+    }
+    #chatLog {
+      max-height: 100px;
+      overflow-y: auto;
+      margin-bottom: 8px;
+      background: white;
+      border-radius: 10px;
+      padding: 8px 12px;
+      color: #004440;
+      font-size: 13px;
+      line-height: 1.2;
+    }
+    #chatInput {
+      width: 100%;
+      padding: 8px 10px;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      box-sizing: border-box;
+      outline: none;
+    }
+  </style>
 </head>
 <body>
 
-<h1>Ultimate Diploma-Level Offline Math Bot (Voice Enabled)</h1>
+<header>
+  <h1>Ethereal Ink Studios</h1>
+  <p>Home of JobSniper X & Forex Bots — Powered by AI</p>
+</header>
 
-<div id="chat"></div>
+<main>
+  <a href="https://job.etherealinkbytiisetso.com" class="btn" target="_blank" rel="noopener">🚀 JobSniper X (Jobs Hub)</a>
+  <a href="https://forex.etherealinkbytiisetso.com" class="btn" target="_blank" rel="noopener">💹 Forex Bot Hub</a>
+</main>
 
-<div id="input-area">
-  <input id="input" type="text" placeholder="Ask me any math question..." autocomplete="off" />
-  <button id="send-btn">Ask</button>
-  <button id="mic-btn" title="Click to talk 🎙️">🎙️</button>
+<!-- AI Bot assistant -->
+<div id="botBox">
+  <strong>💬 Ask Ethereal Bot</strong>
+  <div id="chatLog">Hi! Ask me about Ethereal Ink, JobSniper, Forex bot, or how to use this site.</div>
+  <input type="text" id="chatInput" placeholder="Ask something..." onkeydown="if(event.key==='Enter') etherealBot()">
 </div>
 
-<div id="plot"></div>
-
-<!-- Libraries -->
-<script src="https://cdn.jsdelivr.net/npm/mathjs@11.8.0/lib/browser/math.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/algebrite"></script>
-<script src="https://cdn.jsdelivr.net/npm/nerdamer/all.min.js"></script>
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<footer>
+  © 2025 Ethereal Ink Studios | Contact: <a href="mailto:etherealinkbytiisetso@gmail.com" style="color:#a3d9d0; text-decoration: underline;">etherealinkbytiisetso@gmail.com</a>
+</footer>
 
 <script>
-  const chat = document.getElementById('chat');
-  const input = document.getElementById('input');
-  const sendBtn = document.getElementById('send-btn');
-  const micBtn = document.getElementById('mic-btn');
-  const plotDiv = document.getElementById('plot');
+const chatLog = document.getElementById('chatLog');
+const chatInput = document.getElementById('chatInput');
 
-  function addMessage(text, sender) {
-    const div = document.createElement('div');
-    div.classList.add('msg', sender);
-    div.innerHTML = text;
-    chat.appendChild(div);
-    chat.scrollTop = chat.scrollHeight;
-  }
+const knowledge = {
+  hello: "Hello! Welcome to Ethereal Ink Studios. How can I help you today?",
+  job: "You can visit JobSniper X for the latest job listings: https://job.etherealinkbytiisetso.com",
+  forex: "Check out our Forex Bot Hub here: https://forex.etherealinkbytiisetso.com",
+  email: "You can reach us anytime at etherealinkbytiisetso@gmail.com",
+  help: "Just ask me anything about Ethereal Ink, JobSniper X, or Forex Bots!",
+  links: "Our main links are JobSniper X and Forex Bot Hub, both listed on this page.",
+  default: "Sorry, I didn't quite get that. Try asking about jobs, forex, or contact info."
+};
 
-  function clearPlot() {
-    Plotly.purge(plotDiv);
-    plotDiv.innerHTML = '';
-  }
+function etherealBot() {
+  const userText = chatInput.value.toLowerCase().trim();
+  if (!userText) return;
 
-  function plotFunction(expr) {
-    clearPlot();
-    let xVals = [];
-    let yVals = [];
-    const mathScope = {x: 0};
-    let f;
-    try {
-      f = math.compile(expr);
-    } catch {
-      addMessage("❌ Error parsing function for plotting.", 'bot');
-      return;
-    }
-    for(let x=-10; x<=10; x+=0.1) {
-      mathScope.x = x;
-      try {
-        let y = f.evaluate(mathScope);
-        if (typeof y === 'number' && isFinite(y)) {
-          xVals.push(x);
-          yVals.push(y);
-        }
-      } catch {}
-    }
-    let data = [{
-      x: xVals,
-      y: yVals,
-      type: 'scatter',
-      mode: 'lines',
-      line: {color: '#82c91e'}
-    }];
-    let layout = {
-      title: `Graph of y = ${expr}`,
-      paper_bgcolor: '#222',
-      plot_bgcolor: '#111',
-      font: {color: '#eee'},
-      margin: {t: 40, b: 40, l: 50, r: 20}
-    };
-    Plotly.newPlot(plotDiv, data, layout, {responsive: true});
-  }
+  chatLog.innerHTML += `<div><strong>You:</strong> ${chatInput.value}</div>`;
+  chatInput.value = "";
 
-  function getStepByStepExplanation(type, expr) {
-    switch(type) {
-      case 'solve':
-        return `➡️ <b>Step 1:</b> Write down the equation: <code>${expr}</code><br>
-➡️ <b>Step 2:</b> Rearrange all terms to one side.<br>
-➡️ <b>Step 3:</b> Factorize or apply formulas (e.g. quadratic formula).<br>
-➡️ <b>Step 4:</b> Find the roots (solutions).<br>`;
-      case 'derivative':
-        return `➡️ <b>Step 1:</b> Identify the function: <code>${expr}</code><br>
-➡️ <b>Step 2:</b> Apply differentiation rules (power, product, chain).<br>
-➡️ <b>Step 3:</b> Simplify the expression.<br>`;
-      case 'integral':
-        return `➡️ <b>Step 1:</b> Identify the function: <code>${expr}</code><br>
-➡️ <b>Step 2:</b> Apply integration rules (power rule, substitution).<br>
-➡️ <b>Step 3:</b> Add constant of integration + C.<br>`;
-      case 'eval':
-        return `➡️ <b>Step 1:</b> Calculate the expression step-by-step.<br>
-➡️ <b>Step 2:</b> Simplify to get the final result.<br>`;
-      case 'determinant':
-        return `➡️ <b>Step 1:</b> Write down the matrix.<br>
-➡️ <b>Step 2:</b> Apply determinant formula (expand minors).<br>
-➡️ <b>Step 3:</b> Calculate the determinant value.<br>`;
-      case 'system':
-        return `➡️ <b>Step 1:</b> Write the system of equations.<br>
-➡️ <b>Step 2:</b> Use substitution or elimination.<br>
-➡️ <b>Step 3:</b> Solve for each variable.<br>`;
-      case 'complex':
-        return `➡️ <b>Step 1:</b> Write the complex numbers.<br>
-➡️ <b>Step 2:</b> Apply arithmetic rules.<br>
-➡️ <b>Step 3:</b> Simplify the result.<br>`;
-      case 'trig':
-        return `➡️ <b>Step 1:</b> Identify the trig expression.<br>
-➡️ <b>Step 2:</b> Apply trig identities or simplifications.<br>
-➡️ <b>Step 3:</b> Simplify or solve.<br>`;
-      default:
-        return '';
+  let response = knowledge.default;
+
+  for (const key in knowledge) {
+    if (userText.includes(key)) {
+      response = knowledge[key];
+      break;
     }
   }
 
-  function parseMatrix(str) {
-    try {
-      let arr = JSON.parse(str.replace(/'/g,'"'));
-      if (!Array.isArray(arr)) return null;
-      for(let row of arr) {
-        if (!Array.isArray(row)) return null;
-      }
-      return arr;
-    } catch {
-      return null;
-    }
-  }
+  chatLog.innerHTML += `<div><strong>Bot:</strong> ${response}</div><br>`;
+  chatLog.scrollTop = chatLog.scrollHeight;
+}
+</script>
 
-  function complexOperation(op, c1Str, c2Str) {
-    try {
-      let c1 = nerdamer(c1Str);
-      let c2 = nerdamer(c2Str);
-      let res;
-      switch(op) {
-        case 'add': res = nerdamer(`(${c1})+(${c2})`); break;
-        case 'mul': res = nerdamer(`(${c1})*(${c2})`); break;
-        case 'conj': return `<b>Conjugate of ${c1Str}:</b> ${c1.conjugate().toString()}`;
-        default: return "Invalid complex operation.";
-      }
-      return `<b>Result:</b> ${res.toString()}`;
-    } catch {
-      return "Error in complex operation.";
-    }
-  }
-
-  function solveSystem(equations) {
-    try {
-      const varsSet = new Set();
-      equations.forEach(eq => {
-        const varMatches = eq.match(/[a-z]/gi);
-        if (varMatches) varMatches.forEach(v => varsSet.add(v));
-      });
-      const vars = Array.from(varsSet);
-      if (vars.length === 0) return "No variables found.";
-
-      let A = [];
-      let b = [];
-      for(let eq of equations) {
-        let row = [];
-        for(let v of vars) {
-          let regex = new RegExp(`([+-]?\\d*\\.?\\d*)${v}`, 'i');
-          let m = eq.match(regex);
-          if(m) {
-            let val = m[1];
-            if (val === '' || val === '+') val = 1;
-            else if(val === '-') val = -1;
-            else val = parseFloat(val);
-            row.push(val);
-          } else {
-            row.push(0);
-          }
-        }
-        A.push(row);
-        let rhsMatch = eq.match(/=([+-]?\\d+\\.?\\d*)/);
-        if (rhsMatch) b.push(parseFloat(rhsMatch[1]));
-        else b.push(0);
-      }
-
-      let solution = math.lusolve(A, b);
-      let res = vars.map((v, i) => `${v} = ${solution[i][0].toFixed(5)}`).join(', ');
-      return res;
-
-    } catch(e) {
-      return "Error solving system of equations.";
-    }
-  }
-
-  function trigIdentityCheck(expr) {
-    try {
-      let simp = nerdamer(expr).expand().toString();
-      return `<b>Simplified trig expression:</b> ${simp}`;
-    } catch {
-      return "Error simplifying trig expression.";
-    }
-  }
-
-  function mathAnswer(question) {
-    question = question.trim();
-    const qLower = question.toLowerCase();
-
-    function cleanInput(str) {
-      return str.replace(/×/g, '*').replace(/÷/g, '/').replace(/−/g, '-').replace(/—/g, '-').replace(/x/gi, '*');
-    }
-    const cleanedQuestion = cleanInput(question);
-
-    clearPlot();
-
-    if (/^[0-9\s+\-*/^().%,]+$/.test(cleanedQuestion)) {
-      try {
-        let res = math.evaluate(cleanedQuestion);
-        let expl = getStepByStepExplanation('eval', cleanedQuestion);
-        return `<b>Result:</b> ${res}<br><br>${expl}`;
-      } catch(e) {}
-    }
-
-    if (qLower.startsWith('solve')) {
-      if (/system/i.test(qLower)) {
-        let parts = question.match(/solve system (.+)/i);
-        if (parts && parts[1]) {
-          let eqs = parts[1].split(/and|,/i).map(s => s.trim());
-          return solveSystem(eqs) + "<br><br>" + getStepByStepExplanation('system', parts[1]);
-        }
-      }
-      try {
-        let eq = question.match(/solve (.+)/i)[1];
-        let expr = eq.replace('=', '-(') + ')';
-        let roots = Algebrite.run(`roots(${expr})`);
-        let expl = getStepByStepExplanation('solve', eq);
-        return `<b>Solutions:</b> ${roots}<br><br>${expl}`;
-      } catch(e) {}
-    }
-
-    if (qLower.includes('derivative') || qLower.includes('differentiate')) {
-      let derMatch = question.match(/(?:derivative|differentiate) of (.+)/i);
-      if (derMatch && derMatch[1]) {
-        try {
-          let deriv = Algebrite.run(`d(${derMatch[1]})`);
-          let expl = getStepByStepExplanation('derivative', derMatch[1]);
-          return `<b>Derivative:</b> ${deriv}<br><br>${expl}`;
-        } catch(e) {
-          try {
-            let der = nerdamer(`diff(${derMatch[1]})`).toString();
-            let expl = getStepByStepExplanation('derivative', derMatch[1]);
-            return `<b>Derivative:</b> ${der}<br><br>${expl}`;
-          } catch {
-            return "Error computing derivative.";
-          }
-        }
-      }
-    }
-
-    if (qLower.includes('integrate') || qLower.includes('integral')) {
-      let intMatch = question.match(/(?:integrate|integral) of (.+)/i);
-      if (intMatch && intMatch[1]) {
-        try {
-          let integ = Algebrite.run(`integral(${intMatch[1]})`);
-          let expl = getStepByStepExplanation('integral', intMatch[1]);
-          return `<b>Integral:</b> ${integ} + C<br><br>${expl}`;
-        } catch(e) {
-          try {
-            let integ2 = nerdamer.integrate(intMatch[1]).toString();
-            let expl = getStepByStepExplanation('integral', intMatch[1]);
-            return `<b>Integral:</b> ${integ2} + C<br><br>${expl}`;
-          } catch {
-            return "Error computing integral.";
-          }
-        }
-      }
-    }
-
-    if (/determinant/i.test(qLower)) {
-      let matrixMatch = question.match(/determinant of (.+)/i);
-      if (matrixMatch && matrixMatch[1]) {
-        let matrixStr = matrixMatch[1].trim();
-        let matrix = parseMatrix(matrixStr);
-        if (matrix) {
-          try {
-            let det = math.det(matrix);
-            let expl = getStepByStepExplanation('determinant', matrixStr);
-            return `<b>Determinant:</b> ${det}<br><br>${expl}`;
-          } catch {
-            return "Error calculating determinant.";
-          }
-        } else {
-          return "Invalid matrix format. Use JSON-like array e.g. [[1,2],[3,4]]";
-        }
-      }
-    }
-
-    if (/complex/i.test(qLower)) {
-      if (/add/i.test(qLower)) {
-        let parts = question.match(/add (.+) and (.+)/i);
-        if(parts && parts[1] && parts[2]) {
-          return complexOperation('add', parts[1], parts[2]) + '<br><br>' + getStepByStepExplanation('complex', `Add ${parts[1]} and ${parts[2]}`);
-        }
-      }
-      if (/multiply/i.test(qLower)) {
-        let parts = question.match(/multiply (.+) and (.+)/i);
-        if(parts && parts[1] && parts[2]) {
-          return complexOperation('mul', parts[1], parts[2]) + '<br><br>' + getStepByStepExplanation('complex', `Multiply ${parts[1]} and ${parts[2]}`);
-        }
-      }
-      if (/conjugate/i.test(qLower)) {
-        let parts = question.match(/conjugate of (.+)/i);
-        if(parts && parts[1]) {
-          return complexOperation('conj', parts[1], '') + '<br><br>' + getStepByStepExplanation('complex', `Conjugate of ${parts[1]}`);
-        }
-      }
-    }
-
-    if (/trig/i.test(qLower) || /sin|cos|tan/.test(qLower)) {
-      let exprMatch = question.match(/(?:check|simplify|verify)? ?(?:trig identity|trigonometric expression)?(?: of)? (.+)/i);
-      if (exprMatch && exprMatch[1]) {
-        return trigIdentityCheck(exprMatch[1]) + '<br><br>' + getStepByStepExplanation('trig', exprMatch[1]);
-      }
-    }
-
-    if (/plot/i.test(qLower)) {
-      let plotMatch = question.match(/plot (.+)/i);
-      if (plotMatch && plotMatch[1]) {
-        plotFunction(plotMatch[1]);
-        return `<b>Plotting function:</b> y = ${plotMatch[1]}`;
-      }
-    }
-
-    return "Sorry, I don't understand that math question yet. Try simpler expressions, equations, or use keywords like solve, derivative, integrate, determinant, complex, trig, plot.";
-  }
-
-  // Ask handler - called when user submits a question
-  function ask() {
-    const question = input.value.trim();
-    if (!question) return;
-    addMessage(question, 'user');
-    input.value = '';
-
-    setTimeout(() => {
-      const answer = mathAnswer(question);
-      addMessage(answer, 'bot');
-    }, 400);
-  }
-
-  // Event listeners for buttons and input
-  sendBtn.addEventListener('click', ask);
-  input.addEventListener('keydown', e => {
-    if (e.key === 'Enter') ask();
-  });
-
-  // Voice recognition setup
-  let recognition;
-  let recognizing = false;
-
-  if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-    micBtn.style.display = 'none'; // hide mic if not supported
-    addMessage("⚠️ Voice input not supported in this browser.", 'bot');
-  } else {
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    recognition = new SpeechRecognition();
-    recognition
+</body>
+  </html>
