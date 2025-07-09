@@ -1,165 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ethereal Ink Studios | Powered by AI</title>
-  <meta name="description" content="Home of JobSniper X, Forex Bots & Flying AI Tools. Ethereal Ink Studios empowers your hustle with smart tools.">
-  <meta name="keywords" content="AI, Forex Bots, JobSniper, Ethereal Ink, Automation, Smart Tools, South Africa, Hustle, Online Income, AI Chatbot, Web Tools, Zulu AI">
-  <meta name="author" content="Ethereal Ink Studios">
-  <meta property="og:title" content="Ethereal Ink Studios">
-  <meta property="og:description" content="Access AI Bots, Forex Tools, and JobSniper X – Built to Elevate Your Hustle.">
-  <meta property="og:url" content="https://etherealinkbytiisetso.com">
-  <meta property="og:type" content="website">
+  <meta name="description" content="Ethereal Ink Studios: AI tools like JobSniper X, Forex Bots, Weather AI, Secret Zones & Flying Game. Join the future of tech!">
+  <meta name="keywords" content="Ethereal Ink, JobSniper X, Forex Bot, Flying Game, AI Tools, South Africa AI, Stylish Weather, DAGO Secret, Canva AI, Tech Studio, African Innovation, GPT Web, AI South Africa, Forex Signals, Job Finder AI, AI Hub, Titi AI, Underground Apps, Bot Tools">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#084">
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #000 0%, #044 100%);
-      color: #f0f0f0;
-      text-align: center;
-      animation: fadeIn 1.5s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    header {
-      padding: 60px 20px 30px;
-    }
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      color: #0f0;
-      text-shadow: 0 0 15px #0f08;
-    }
-    header p {
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
-    main {
-      margin: 40px 20px 80px;
-    }
+    body { font-family: 'Segoe UI', sans-serif; background: radial-gradient(#001f0f, #000); color: #eee; margin: 0; padding: 0; overflow-x: hidden; }
+    header { padding: 50px 20px 20px; text-align: center; animation: fadeIn 2s ease-in-out; }
+    header h1 { font-size: 3rem; margin-bottom: 0; color: #0f0; text-shadow: 0 0 15px #0f0; }
+    header p { font-size: 1.1rem; margin-top: 10px; font-weight: 500; color: #9f9; }
+    main { display: flex; flex-wrap: wrap; justify-content: center; margin: 30px 10px 80px; gap: 20px; }
     .btn {
       display: inline-block;
-      margin: 15px 10px;
-      padding: 14px 35px;
-      background: #0f08;
-      color: #fff;
-      font-size: 1.2rem;
-      font-weight: bold;
-      border-radius: 14px;
-      box-shadow: 0 0 15px #0fc;
-      text-decoration: none;
-      transition: 0.3s ease-in-out;
-    }
-    .btn:hover {
-      background: #0fc;
-      color: #003;
-      transform: scale(1.05);
-    }
-
-    /* Bot Styling */
-    #botToggle {
-      position: fixed;
-      bottom: 100px;
-      right: 25px;
-      background: #0f0;
-      color: #000;
-      border-radius: 50%;
-      font-weight: bold;
-      width: 45px;
-      height: 45px;
-      border: none;
-      box-shadow: 0 0 12px #0f08;
-      cursor: pointer;
-      z-index: 9999;
-    }
-
-    #botBox {
-      position: fixed;
-      bottom: 160px;
-      right: 25px;
-      width: 260px;
-      background: #003322ee;
-      border: 2px solid #0c6;
-      border-radius: 14px;
-      box-shadow: 0 0 18px #0f08;
-      font-size: 13px;
-      color: #eee;
-      z-index: 9999;
-      padding: 10px;
-      display: none;
-    }
-    #botBox header {
-      font-weight: bold;
-      color: #0c6;
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
-    #chatLog {
-      max-height: 140px;
-      overflow-y: auto;
-      background: #002211cc;
-      border-radius: 10px;
-      padding: 8px;
-      text-align: left;
-      font-size: 13px;
-      margin-bottom: 6px;
-    }
-    .user-message { text-align: right; color: #9ff; margin: 4px 0; }
-    .bot-message { color: #0c6; margin: 4px 0; }
-    #chatInput {
-      width: 100%;
-      padding: 8px;
-      border: none;
-      border-radius: 10px;
-      font-size: 14px;
+      padding: 14px 32px;
+      background: #0c6;
       color: #002211;
       font-weight: bold;
+      font-size: 1.2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 18px #0c6cc9cc;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.4s ease;
     }
-    #typingIndicator {
-      font-style: italic;
-      font-size: 13px;
-      color: #0c6;
-      height: 16px;
-      margin-bottom: 6px;
-      display: none;
-    }
+    .btn:hover {
+      background: #0af;
+      color: #002233;
+      transform: scale(1.07);
+      box-shadow: 0 0 25px #0affcc;
+    }#botToggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #0c6;
+  color: #002211;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #0c6aaacc;
+  z-index: 1000;
+}
+
+#botBox {
+  display: none;
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 280px;
+  background: #002f1acc;
+  border: 2px solid #0c6;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #0c6cc9dd;
+  font-size: 13px;
+  color: #eee;
+  z-index: 999;
+  padding: 12px;
+}
+#botBox header {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #0c6;
+  display: flex;
+  justify-content: space-between;
+}
+#chatLog {
+  max-height: 140px;
+  overflow-y: auto;
+  padding: 8px;
+  background: #001a10;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  text-align: left;
+  font-size: 13px;
+}
+.bot-message { color: #0c6; margin-bottom: 6px; }
+.user-message { color: #9ff; margin-bottom: 6px; text-align: right; }
+#chatInput {
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  outline: none;
+  color: #002211;
+  font-weight: bold;
+}
+#typingIndicator {
+  font-size: 13px;
+  color: #0c6;
+  font-style: italic;
+  height: 18px;
+  margin-bottom: 4px;
+  display: none;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
   </style>
 </head>
-<body>
-
-<header>
+<body><header>
   <h1>Ethereal Ink Studios</h1>
-  <p>🚀 5 Powerful Tools. Built for Hustlers. Powered by AI.</p>
-</header>
-
-<main>
-  <a href="https://job.etherealinkbytiisetso.com" class="btn" target="_blank">🧠 JobSniper X</a>
+  <p>Home of JobSniper X, Forex Bots & Flying AI Apps</p>
+</header><main>
+  <a href="https://job.etherealinkbytiisetso.com" class="btn" target="_blank">🚀 JobSniper X</a>
   <a href="https://forex.etherealinkbytiisetso.com" class="btn" target="_blank">📈 Forex Bot Hub</a>
-  <a href="https://flyingaround.my.canva.site/stylish-weather-landing-page-with-ethereal-background" class="btn" target="_blank">⛅ Stylish Weather</a>
+  <a href="https://flyingaround.my.canva.site/stylish-weather-landing-page-with-ethereal-background" class="btn" target="_blank">☁️ Weather App</a>
   <a href="https://flyingaround.my.canva.site/dago2eusmbk" class="btn" target="_blank">🕵️ DAGO Secret Zone</a>
-  <a href="https://flyingaround.my.canva.site/custom-flying-plane-game-concept" class="btn" target="_blank">✈️ Flying Plane Game</a>
-</main>
+  <a href="https://flyingaround.my.canva.site/custom-flying-plane-game-concept" class="btn" target="_blank">✈️ Flying Game</a>
+</main><button id="botToggle">💬 Chat with Bot</button>
 
-<!-- AI Bot -->
-<button id="botToggle">💬</button>
-<div id="botBox" role="complementary" aria-label="EtherealBot AI assistant">
-  <header>Ask EtherealBot</header>
-  <div id="chatLog">Hi champ! Ask me about JobSniper, Forex, or this site.</div>
+<div id="botBox">
+  <header>AI Bot <span id="botClose" style="cursor:pointer; color:#f66">×</span></header>
+  <div id="chatLog">Hi! Ask me about Ethereal Ink, jobs, bots or site use.</div>
   <div id="typingIndicator">Typing<span id="dots">...</span></div>
   <input id="chatInput" type="text" placeholder="Ask something..." />
-</div>
-
-<script>
+</div><script>
+  const botToggle = document.getElementById('botToggle');
+  const botBox = document.getElementById('botBox');
+  const botClose = document.getElementById('botClose');
   const chatLog = document.getElementById("chatLog");
   const chatInput = document.getElementById("chatInput");
   const typingIndicator = document.getElementById("typingIndicator");
   const dots = document.getElementById("dots");
-  const botBox = document.getElementById("botBox");
-  const botToggle = document.getElementById("botToggle");
 
   let dotsInterval;
   function startDots() {
@@ -174,19 +145,13 @@
     dots.textContent = '';
   }
 
-  botToggle.onclick = () => {
-    botBox.style.display = botBox.style.display === 'none' ? 'block' : 'none';
-  };
-
   const replies = {
-    ethereal: "🌿 Ethereal Ink Studios is your hub for JobSniper, Forex Bots & AI tools.",
-    jobs: "🚀 JobSniper X helps you get real jobs fast with smart automation.",
-    forex: "📈 Forex Bot Hub runs auto trades 24/7 — profit while you sleep.",
-    weather: "⛅ Stylish Weather App shows smooth climate stats with ethereal design.",
-    dago: "🕵️ DAGO Zone is a smart secrets lab — discover something wild.",
-    fly: "✈️ Our Plane Game takes flight into fun AI motion!",
-    help: "💡 You can ask about JobSniper, Forex bots, flying tools, or site tips.",
-    default: "🤖 Sorry champ, didn’t catch that. Ask about jobs, forex, weather, DAGO or flying."
+    ethereal: "🌿 Ethereal Ink Studios is your AI hub for JobSniper and Forex tools.",
+    jobs: "🚀 JobSniper X helps you apply for real jobs with AI support.",
+    forex: "📈 Our Forex bots run 24/7 with smart trade signals.",
+    use: "💡 Click any link above or ask how to use this site!",
+    help: "👋 Ask about JobSniper, Forex bots, or anything else.",
+    default: "🤖 I didn’t catch that. Try 'job', 'forex' or 'help'."
   };
 
   function speak(text) {
@@ -199,7 +164,7 @@
   async function botReply(message) {
     typingIndicator.style.display = "block";
     startDots();
-    await new Promise(r => setTimeout(r, 1500));
+    await new Promise(r => setTimeout(r, 1300));
     stopDots();
     typingIndicator.style.display = "none";
 
@@ -208,10 +173,9 @@
     if (m.includes("ethereal")) response = replies.ethereal;
     else if (m.includes("job")) response = replies.jobs;
     else if (m.includes("forex")) response = replies.forex;
-    else if (m.includes("weather")) response = replies.weather;
-    else if (m.includes("dago")) response = replies.dago;
-    else if (m.includes("fly")) response = replies.fly;
-    else if (m.includes("help") || m.includes("how")) response = replies.help;
+    else if (m.includes("how") || m.includes("use")) response = replies.use;
+    else if (m.includes("help")) response = replies.help;
+    else if (m.trim() === "") response = "Please ask something!";
 
     chatLog.innerHTML += `<div class="user-message"><strong>You:</strong> ${message}</div>`;
     chatLog.innerHTML += `<div class="bot-message"><strong>Bot:</strong> ${response}</div>`;
@@ -229,7 +193,8 @@
       }
     }
   });
-</script>
 
-</body>
+  botToggle.onclick = () => botBox.style.display = 'block';
+  botClose.onclick = () => botBox.style.display = 'none';
+</script></body>
   </html>
