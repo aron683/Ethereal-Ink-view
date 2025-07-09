@@ -1,80 +1,131 @@
-<!-- Ethereal Ink Studios Main index.html with Talking AI Bot -->
+<!-- Ethereal Ink Studios | Final Combined Underground Version -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ethereal Ink Studios | Powered by AI</title>
-  <meta name="description" content="Home of JobSniper X & Forex Bots — Powered by AI">
+  <title>Ethereal Ink Studios | AI-Powered Apps</title>
+  <meta name="description" content="Explore JobSniper X, Forex Bots, Stylish Weather Apps, Flying Plane Games & AI Tools by Ethereal Ink Studios. Underground-built.">
+  <meta name="keywords" content="Ethereal Ink, JobSniper, Forex Bots, AI Bot, South African Tech, Weather App, Flying Game, Underground AI, Ethereal Tools, Smart Bot, AI Website, GPT Alternative, Local Bots, Zulu Bot, isiZulu AI, Johannesburg tech, Soweto dev, Smart Apps, Freelance Hustle, Forex Robot, AI Business, Job Search AI, Professional Apps, Dark Mode UI, Stylish Landing Pages, Chatbot, Multilingual Bot, SEO Landing Page, Vaal tech, Termux Dev, GPT Site, Real-time Bot, Educational AI, Mzansi Tech, Kasi Developer, Ethereal AI, Powerful Landing Page, Hustler Bot, Code-Free AI, Open Source Apps, Flying Games, Metro AI, Job Bot, Forex Tool, MT5 AI, Smart Auto Tools, Local Dev, Underground Tech, Youth Innovation, Powerful Chatbox, South Africa AI, AI Motivation, Smart Hustle, Bot with Voice, Talking Assistant, AI with isiZulu, Free Bots, AI with Style, Animated Site, Speak Bot, Responsive Chat, Offline Bot, HTML AI, CSS UI, Animated Buttons, Modern Website, Professional AI Website, Interactive ChatBot, African AI, Voice Chatbot, GPT Bot Lite, No API Key AI, Free AI, Developer Portfolio, Ethereal Studio Showcase, Landing Hub, AI Web Studio, GPT UI Lite">
+  <meta name="author" content="Ethereal Ink Studios">
+  <meta property="og:title" content="Ethereal Ink Studios | Powered by AI">
+  <meta property="og:description" content="Discover South Africa's most underground AI-powered tools — JobSniper X, Forex Bots, Smart Apps, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://etherealinkbytiisetso.com">
+  <meta property="og:image" content="https://etherealinkbytiisetso.com/preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
   <style>
-    body { font-family: Arial, sans-serif; background: #084; color: #eee; margin: 0; padding: 0; text-align: center; }
-    header { padding: 40px 20px 20px; }
-    header h1 { font-size: 2.8rem; margin-bottom: 0; }
-    header p { font-size: 1.2rem; margin-top: 5px; font-weight: 600; }
-    main { margin: 40px 20px 80px; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(ellipse at top left, #002a2a, #001a1a);
+      color: #e6ffe6;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+      background: linear-gradient(45deg, #003300, #001a1a);
+      box-shadow: 0 0 30px #0f6;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      color: #0f0;
+      text-shadow: 0 0 12px #0f6;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin-top: 10px;
+      font-weight: 600;
+      color: #aaffaa;
+    }
+
+    main {
+      text-align: center;
+      margin: 50px 20px 100px;
+    }
+
     .btn {
       display: inline-block;
       margin: 15px 10px;
       padding: 15px 40px;
-      background: #0c6;
-      color: #004400;
+      background: #00cc88;
+      color: #003322;
       font-weight: bold;
-      font-size: 1.3rem;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #0c6cc9aa;
+      font-size: 1.2rem;
+      border-radius: 14px;
+      box-shadow: 0 0 20px #00ffcc88;
       cursor: pointer;
       transition: all 0.3s ease;
       text-decoration: none;
     }
+
     .btn:hover {
-      background: #0af;
-      color: #002255;
-      box-shadow: 0 0 25px #0affccff;
-      transform: scale(1.05);
+      background: #00ffff;
+      color: #002a2a;
+      transform: scale(1.07);
+      box-shadow: 0 0 35px #00ffffaa;
     }
 
-    /* ChatBot Container */
+    /* ChatBot Box */
     #botBox {
       position: fixed;
       bottom: 40px;
       right: 20px;
-      width: 280px;
-      background: #003322ee;
-      border: 2px solid #0c6;
+      width: 290px;
+      background: #002a2acc;
+      border: 2px solid #00cc88;
       border-radius: 15px;
-      box-shadow: 0 0 15px #0c6cc9cc;
+      box-shadow: 0 0 20px #00ffccaa;
       font-size: 13px;
       color: #eee;
       z-index: 10000;
       padding: 12px;
-      user-select: none;
+      backdrop-filter: blur(8px);
     }
+
     #botBox header {
       font-weight: bold;
       margin-bottom: 8px;
-      font-size: 14px;
-      color: #0c6;
+      font-size: 15px;
+      color: #00ffcc;
     }
+
     #chatLog {
-      max-height: 140px;
+      max-height: 160px;
       overflow-y: auto;
-      padding: 8px;
-      background: #002211cc;
+      padding: 10px;
+      background: #001f1fcc;
       border-radius: 10px;
       margin-bottom: 8px;
       text-align: left;
       font-size: 13px;
-      line-height: 1.3;
+      line-height: 1.4;
     }
+
     #chatLog .bot-message {
-      color: #0c6;
+      color: #0f0;
       margin-bottom: 6px;
     }
+
     #chatLog .user-message {
       color: #9ff;
       margin-bottom: 6px;
       text-align: right;
     }
+
     #chatInput {
       width: 100%;
       padding: 8px;
@@ -82,12 +133,13 @@
       border: none;
       font-size: 14px;
       outline: none;
-      color: #002211;
+      color: #003322;
       font-weight: bold;
     }
+
     #typingIndicator {
       font-size: 14px;
-      color: #0c6;
+      color: #00ffcc;
       font-style: italic;
       height: 18px;
       margin-bottom: 6px;
@@ -99,15 +151,18 @@
 
 <header>
   <h1>Ethereal Ink Studios</h1>
-  <p>Home of JobSniper X & Forex Bots — Powered by AI</p>
+  <p>Explore Our Underground AI Tools, Bots & Flying Apps</p>
 </header>
 
 <main>
   <a href="https://job.etherealinkbytiisetso.com" class="btn" target="_blank">🚀 JobSniper X (Jobs Hub)</a>
   <a href="https://forex.etherealinkbytiisetso.com" class="btn" target="_blank">📈 Forex Bot Hub</a>
+  <a href="https://flyingaround.my.canva.site/stylish-weather-landing-page-with-ethereal-background" class="btn" target="_blank">☁️ Stylish Weather App</a>
+  <a href="https://flyingaround.my.canva.site/dago2eusmbk" class="btn" target="_blank">🕵️‍♂️ DAGO Secret Zone</a>
+  <a href="https://flyingaround.my.canva.site/custom-flying-plane-game-concept" class="btn" target="_blank">✈️ Flying Plane Game</a>
 </main>
 
-<!-- 🤖 EtherealBot Chatbox -->
+<!-- 🤖 Underground AI Chatbox -->
 <div id="botBox" role="complementary" aria-label="EtherealBot AI assistant">
   <header>💬 Ask Ethereal Bot</header>
   <div id="chatLog" aria-live="polite" aria-atomic="true">
@@ -123,7 +178,6 @@
   const typingIndicator = document.getElementById("typingIndicator");
   const dots = document.getElementById("dots");
 
-  // Animate dots for typing effect
   let dotsInterval;
   function startDots() {
     let count = 0;
@@ -137,23 +191,14 @@
     dots.textContent = '';
   }
 
-  // Simple multi-language replies
   const replies = {
     en: {
-      ethereal: "🌿 Ethereal Ink Studios is your hub for AI-powered JobSniper and Forex Bots.",
-      jobs: "🚀 JobSniper X helps you snipe real jobs fast with AI smarts!",
-      forex: "📈 Our Forex Bot Hub automates profitable trades 24/7.",
-      use: "💡 Just type your question or ask how to use the site!",
-      help: "👋 You can ask about JobSniper, Forex bots, or site features.",
-      default: "🤖 Sorry, I didn’t get that. Try asking about jobs, forex, or Ethereal Ink."
-    },
-    zu: {
-      ethereal: "🌿 Ethereal Ink Studios kuyindawo yakho yamabhizinisi e-AI.",
-      jobs: "🚀 JobSniper X ikusiza uthole imisebenzi ngokushesha nge-AI!",
-      forex: "📈 I-Forex Bot Hub yethu isebenza 24/7.",
-      use: "💡 Bhala umbuzo wakho noma ubuze indlela yokusebenzisa!",
-      help: "👋 Ungabuza ngemisebenzi, ama-bot e-forex, noma izici zesayithi.",
-      default: "🤖 Angiqondi kahle, zama futhi."
+      ethereal: "🌿 Ethereal Ink Studios is your underground home for AI-powered JobSniper and Forex Bots.",
+      jobs: "🚀 JobSniper X helps you snipe jobs fast using smart automation!",
+      forex: "📈 Our Forex Bot Hub runs 24/7 and finds profit like a beast.",
+      use: "💡 Just ask anything, like 'how to use this site' or 'what does JobSniper do'.",
+      help: "👋 Ask me anything about the tools listed here — I got you.",
+      default: "🤖 I didn’t get that, boss. Try asking about jobs, forex, or Ethereal."
     }
   };
 
@@ -164,37 +209,27 @@
     speechSynthesis.speak(utter);
   }
 
-  function getLang() {
-    // Just a basic example - pick English or Zulu based on user language
-    const userLang = navigator.language || navigator.userLanguage;
-    if (userLang.startsWith("zu")) return "zu";
-    return "en";
-  }
-
-  async function botReply(message) {
+  function botReply(message) {
     typingIndicator.style.display = "block";
     startDots();
-    await new Promise(r => setTimeout(r, 1500)); // simulate thinking
-    stopDots();
-    typingIndicator.style.display = "none";
+    setTimeout(() => {
+      stopDots();
+      typingIndicator.style.display = "none";
+      let m = message.toLowerCase();
+      let res = replies.en.default;
 
-    const lang = getLang();
-    let response = replies[lang]?.default || replies.en.default;
-    const m = message.toLowerCase();
+      if (m.includes("ethereal")) res = replies.en.ethereal;
+      else if (m.includes("job")) res = replies.en.jobs;
+      else if (m.includes("forex")) res = replies.en.forex;
+      else if (m.includes("use") || m.includes("how")) res = replies.en.use;
+      else if (m.includes("help")) res = replies.en.help;
 
-    if (m.includes("ethereal")) response = replies[lang]?.ethereal || replies.en.ethereal;
-    else if (m.includes("job")) response = replies[lang]?.jobs || replies.en.jobs;
-    else if (m.includes("forex")) response = replies[lang]?.forex || replies.en.forex;
-    else if (m.includes("help") || m.includes("how")) response = replies[lang]?.help || replies.en.help;
-    else if (m.trim() === "") response = "🤖 Please ask something!";
+      chatLog.innerHTML += `<div class="user-message"><strong>You:</strong> ${message}</div>`;
+      chatLog.innerHTML += `<div class="bot-message"><strong>Bot:</strong> ${res}</div>`;
+      chatLog.scrollTop = chatLog.scrollHeight;
 
-    // Show in chat
-    chatLog.innerHTML += `<div class="user-message"><strong>You:</strong> ${message}</div>`;
-    chatLog.innerHTML += `<div class="bot-message"><strong>Bot:</strong> ${response}</div>`;
-    chatLog.scrollTop = chatLog.scrollHeight;
-
-    // Speak reply
-    speak(response);
+      speak(res);
+    }, 1400);
   }
 
   chatInput.addEventListener("keydown", e => {
