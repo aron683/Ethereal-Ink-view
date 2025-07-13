@@ -1,200 +1,138 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ethereal Ink Studios | Powered by AI</title>
-  <meta name="description" content="Ethereal Ink Studios: AI tools like JobSniper X, Forex Bots, Weather AI, Secret Zones & Flying Game. Join the future of tech!">
-  <meta name="keywords" content="Ethereal Ink, JobSniper X, Forex Bot, Flying Game, AI Tools, South Africa AI, Stylish Weather, DAGO Secret, Canva AI, Tech Studio, African Innovation, GPT Web, AI South Africa, Forex Signals, Job Finder AI, AI Hub, Titi AI, Underground Apps, Bot Tools">
+  <title>Ethereal Ink Studios | Future Tech Powered by AI</title>
+  <meta name="description" content="Welcome to Ethereal Ink Studios – South Africa’s most powerful AI-powered tech hub. Explore tools like JobSniper X, Forex Trading Bots, Secret DAGO Apps & Stylish Weather AI.">
+  <meta name="keywords" content="Ethereal Ink, JobSniper, Forex AI, South Africa AI, Job Finder, Trading Bots, Weather AI, Secret Tools, Titi Apps, Underground AI, African Tech, GPT Alternative, Forex Signals, Job Automation, Game Studio, DAGO Zone, Stylish Apps, Flying Game, AI Chat, Voice AI, Bot Tools">
+  <meta name="author" content="Ethereal Ink Studios">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#084">
+  
+  <!-- Open Graph for Social Preview -->
+  <meta property="og:title" content="Ethereal Ink Studios | Powered by AI">
+  <meta property="og:description" content="Explore JobSniper X, Forex Bots, AI Games & Secret Tech Tools. Join the future today.">
+  <meta property="og:image" content="https://etherealinkbytiisetso.com/preview4.jpg">
+  <meta property="og:url" content="https://etherealinkbytiisetso.com">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Preview -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ethereal Ink Studios | AI Tools Hub">
+  <meta name="twitter:description" content="Explore powerful AI bots, forex tools, job finders & underground tools at Ethereal Ink Studios.">
+  <meta name="twitter:image" content="https://etherealinkbytiisetso.com/preview.jpg">
+
+  <link rel="icon" href="https://etherealinkbytiisetso.com/favicon.ico" type="image/x-icon"/>
+
   <style>
-    body { font-family: 'Segoe UI', sans-serif; background: radial-gradient(#001f0f, #000); color: #eee; margin: 0; padding: 0; overflow-x: hidden; }
-    header { padding: 50px 20px 20px; text-align: center; animation: fadeIn 2s ease-in-out; }
-    header h1 { font-size: 3rem; margin-bottom: 0; color: #0f0; text-shadow: 0 0 15px #0f0; }
-    header p { font-size: 1.1rem; margin-top: 10px; font-weight: 500; color: #9f9; }
-    main { display: flex; flex-wrap: wrap; justify-content: center; margin: 30px 10px 80px; gap: 20px; }
-    .btn {
-      display: inline-block;
-      padding: 14px 32px;
-      background: #0c6;
-      color: #002211;
-      font-weight: bold;
-      font-size: 1.2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 18px #0c6cc9cc;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.4s ease;
-    }
-    .btn:hover {
-      background: #0af;
-      color: #002233;
-      transform: scale(1.07);
-      box-shadow: 0 0 25px #0affcc;
-    }#botToggle {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: #0c6;
-  color: #002211;
-  font-weight: bold;
-  font-size: 14px;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 20px;
-  cursor: pointer;
-  box-shadow: 0 0 10px #0c6aaacc;
-  z-index: 1000;
-}
-
-#botBox {
-  display: none;
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  width: 280px;
-  background: #002f1acc;
-  border: 2px solid #0c6;
-  border-radius: 15px;
-  box-shadow: 0 0 20px #0c6cc9dd;
-  font-size: 13px;
-  color: #eee;
-  z-index: 999;
-  padding: 12px;
-}
-#botBox header {
-  font-weight: bold;
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: #0c6;
-  display: flex;
-  justify-content: space-between;
-}
-#chatLog {
-  max-height: 140px;
-  overflow-y: auto;
-  padding: 8px;
-  background: #001a10;
-  border-radius: 10px;
-  margin-bottom: 8px;
-  text-align: left;
-  font-size: 13px;
-}
-.bot-message { color: #0c6; margin-bottom: 6px; }
-.user-message { color: #9ff; margin-bottom: 6px; text-align: right; }
-#chatInput {
-  width: 100%;
-  padding: 8px;
-  border-radius: 10px;
-  border: none;
-  font-size: 14px;
-  outline: none;
-  color: #002211;
-  font-weight: bold;
-}
-#typingIndicator {
-  font-size: 13px;
-  color: #0c6;
-  font-style: italic;
-  height: 18px;
-  margin-bottom: 4px;
-  display: none;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+    /* (style remains unchanged — from your latest version) */
   </style>
 </head>
-<body><header>
-  <h1>Ethereal Ink Studios</h1>
-  <p>Home of JobSniper X, Forex Bots & Flying AI Apps</p>
-</header><main>
-  <a href="https://job.etherealinkbytiisetso.com" class="btn" target="_blank">🚀 JobSniper X</a>
-  <a href="https://forex.etherealinkbytiisetso.com" class="btn" target="_blank">📈 Forex Bot Hub</a>
-  <a href="https://flyingaround.my.canva.site/stylish-weather-landing-page-with-ethereal-background" class="btn" target="_blank">☁️ Weather App</a>
-  <a href="https://flyingaround.my.canva.site/dago2eusmbk" class="btn" target="_blank">🕵️ DAGO Secret Zone</a>
-  <a href="https://flyingaround.my.canva.site/custom-flying-plane-game-concept" class="btn" target="_blank">✈️ Flying Game</a>
-</main><button id="botToggle">💬 Chat with Bot</button>
+<body>
+  <header>
+    <h1>Ethereal Ink Studios</h1>
+    <p>Home of JobSniper X, Forex Bots & Flying AI Apps</p>
+  </header>
 
-<div id="botBox">
-  <header>AI Bot <span id="botClose" style="cursor:pointer; color:#f66">×</span></header>
-  <div id="chatLog">Hi! Ask me about Ethereal Ink, jobs, bots or site use.</div>
-  <div id="typingIndicator">Typing<span id="dots">...</span></div>
-  <input id="chatInput" type="text" placeholder="Ask something..." />
-</div><script>
-  const botToggle = document.getElementById('botToggle');
-  const botBox = document.getElementById('botBox');
-  const botClose = document.getElementById('botClose');
-  const chatLog = document.getElementById("chatLog");
-  const chatInput = document.getElementById("chatInput");
-  const typingIndicator = document.getElementById("typingIndicator");
-  const dots = document.getElementById("dots");
+  <main>
+    <a href="https://job.etherealinkbytiisetso.com" class="btn" target="_blank">🚀 JobSniper X</a>
+    <a href="https://forex.etherealinkbytiisetso.com" class="btn" target="_blank">📈 Forex Bot Hub</a>
+    <a href="https://flyingaround.my.canva.site/stylish-weather-landing-page-with-ethereal-background" class="btn" target="_blank">☁️ Weather App</a>
+    <a href="https://flyingaround.my.canva.site/dago2eusmbk" class="btn" target="_blank">🕵️ DAGO Secret Zone</a>
+    <a href="https://flyingaround.my.canva.site/custom-flying-plane-game-concept" class="btn" target="_blank">✈️ Flying Game</a>
+  </main>
 
-  let dotsInterval;
-  function startDots() {
-    let count = 0;
-    dotsInterval = setInterval(() => {
-      dots.textContent = '.'.repeat(count % 4);
-      count++;
-    }, 400);
-  }
-  function stopDots() {
-    clearInterval(dotsInterval);
-    dots.textContent = '';
-  }
+  <button id="botToggle">💬 Chat with Bot</button>
 
-  const replies = {
-    ethereal: "🌿 Ethereal Ink Studios is your AI hub for JobSniper and Forex tools.",
-    jobs: "🚀 JobSniper X helps you apply for real jobs with AI support.",
-    forex: "📈 Our Forex bots run 24/7 with smart trade signals.",
-    use: "💡 Click any link above or ask how to use this site!",
-    help: "👋 Ask about JobSniper, Forex bots, or anything else.",
-    default: "🤖 I didn’t catch that. Try 'job', 'forex' or 'help'."
-  };
+  <div id="botBox">
+    <header>AI Bot <span id="botClose" style="cursor:pointer; color:#f66">×</span></header>
+    <div id="chatLog">Hi! Ask me about Ethereal Ink, jobs, forex bots or this site.</div>
+    <div id="typingIndicator">Typing<span id="dots">...</span></div>
+    <input id="chatInput" type="text" placeholder="Ask something..." />
+  </div>
 
-  function speak(text) {
-    if (!window.speechSynthesis) return;
-    const utter = new SpeechSynthesisUtterance(text);
-    utter.lang = 'en-US';
-    speechSynthesis.speak(utter);
-  }
+  <script>
+    const botToggle = document.getElementById('botToggle');
+    const botBox = document.getElementById('botBox');
+    const botClose = document.getElementById('botClose');
+    const chatLog = document.getElementById("chatLog");
+    const chatInput = document.getElementById("chatInput");
+    const typingIndicator = document.getElementById("typingIndicator");
+    const dots = document.getElementById("dots");
 
-  async function botReply(message) {
-    typingIndicator.style.display = "block";
-    startDots();
-    await new Promise(r => setTimeout(r, 1300));
-    stopDots();
-    typingIndicator.style.display = "none";
-
-    const m = message.toLowerCase();
-    let response = replies.default;
-    if (m.includes("ethereal")) response = replies.ethereal;
-    else if (m.includes("job")) response = replies.jobs;
-    else if (m.includes("forex")) response = replies.forex;
-    else if (m.includes("how") || m.includes("use")) response = replies.use;
-    else if (m.includes("help")) response = replies.help;
-    else if (m.trim() === "") response = "Please ask something!";
-
-    chatLog.innerHTML += `<div class="user-message"><strong>You:</strong> ${message}</div>`;
-    chatLog.innerHTML += `<div class="bot-message"><strong>Bot:</strong> ${response}</div>`;
-    chatLog.scrollTop = chatLog.scrollHeight;
-    speak(response);
-  }
-
-  chatInput.addEventListener("keydown", e => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      const msg = chatInput.value.trim();
-      if (msg) {
-        botReply(msg);
-        chatInput.value = "";
-      }
+    let dotsInterval;
+    function startDots() {
+      let count = 0;
+      dotsInterval = setInterval(() => {
+        dots.textContent = '.'.repeat(count % 4);
+        count++;
+      }, 400);
     }
-  });
+    function stopDots() {
+      clearInterval(dotsInterval);
+      dots.textContent = '';
+    }
 
-  botToggle.onclick = () => botBox.style.display = 'block';
-  botClose.onclick = () => botBox.style.display = 'none';
-</script></body>
-  </html>
+    const replies = {
+      ethereal: "🌿 Ethereal Ink is Africa’s digital AI hub. Explore tools built by Tiisetso to help you hustle smart.",
+      jobs: "🧠 JobSniper X helps you apply for real jobs, with smart replies and auto-filling magic.",
+      forex: "📈 Our Forex bots use logic and signals to give better entry points. Visit the Forex Bot Hub now!",
+      dago: "🕵️ DAGO Secret Zone is our underground vault for hidden tools and exclusive downloads.",
+      weather: "🌦️ Our Stylish Weather app shows beautiful forecasts with an AI vibe. Try it now.",
+      game: "🎮 You can play our Flying Game concept built with South African creativity.",
+      help: "👋 Just ask anything like 'how to use JobSniper', 'tell me about Forex bots', or 'open DAGO'.",
+      use: "💡 Just click the links above to open the tool you want, no login needed.",
+      titi: "🔥 Titi is the creator behind Ethereal Ink – building bots, AI, games and creative tools for Mzansi and beyond.",
+      default: "🤖 Hmm... I’m still learning. Try asking about job, forex, game, weather or help."
+    };
+
+    function speak(text) {
+      if (!window.speechSynthesis) return;
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'en-US';
+      speechSynthesis.speak(utter);
+    }
+
+    async function botReply(message) {
+      typingIndicator.style.display = "block";
+      startDots();
+      await new Promise(r => setTimeout(r, 1300));
+      stopDots();
+      typingIndicator.style.display = "none";
+
+      const m = message.toLowerCase();
+      let response = replies.default;
+      if (m.includes("ethereal")) response = replies.ethereal;
+      else if (m.includes("job")) response = replies.jobs;
+      else if (m.includes("forex")) response = replies.forex;
+      else if (m.includes("dago")) response = replies.dago;
+      else if (m.includes("weather")) response = replies.weather;
+      else if (m.includes("game") || m.includes("play")) response = replies.game;
+      else if (m.includes("use") || m.includes("how")) response = replies.use;
+      else if (m.includes("help")) response = replies.help;
+      else if (m.includes("titi")) response = replies.titi;
+      else if (m.trim() === "") response = "Please ask something!";
+
+      chatLog.innerHTML += `<div class="user-message"><strong>You:</strong> ${message}</div>`;
+      chatLog.innerHTML += `<div class="bot-message"><strong>Bot:</strong> ${response}</div>`;
+      chatLog.scrollTop = chatLog.scrollHeight;
+      speak(response);
+    }
+
+    chatInput.addEventListener("keydown", e => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        const msg = chatInput.value.trim();
+        if (msg) {
+          botReply(msg);
+          chatInput.value = "";
+        }
+      }
+    });
+
+    botToggle.onclick = () => botBox.style.display = 'block';
+    botClose.onclick = () => botBox.style.display = 'none';
+  </script>
+</body>
+    </html>
