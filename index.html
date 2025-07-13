@@ -141,11 +141,18 @@
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    @keyframes glowTitle {
+      0% { text-shadow: 0 0 10px #0f0; }
+      100% { text-shadow: 0 0 25px #0f0; }
+    }
+    header.loaded h1 {
+      animation: glowTitle 2s infinite alternate;
+    }
   </style></head>
 <body>
   <header>
     <img src="Preview4.jpg" alt="Ethereal Ink Logo">
-    <h1>Ethereal Ink Studios</h1>
+    <h1 id="mainTitle"></h1>
     <p>Home of Bots, Hustle Tech & Underground AI Built by Titi</p>
   </header>  <main>
     <a href="https://job.etherealinkbytiisetso.com" class="btn" target="_blank">🚀 JobSniper X</a>
@@ -163,6 +170,24 @@
   </div>  <footer>
     <p>⚡ Powered by Ethereal Ink Studios. Designed by Titi in South Africa. All apps & bots are built to help Africans thrive using smart tech.</p>
   </footer>  <script>
+    // Typing animation
+    const title = document.getElementById('mainTitle');
+    const txt = "Ethereal Ink Studios";
+    let i = 0;
+    function typeIt() {
+      if (i < txt.length) {
+        title.innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeIt, 90);
+      }
+    }
+    window.onload = () => {
+      document.body.classList.add("loaded");
+      title.innerHTML = "";
+      typeIt();
+    };
+
+    // Bot system
     const botToggle = document.getElementById('botToggle');
     const botBox = document.getElementById('botBox');
     const botClose = document.getElementById('botClose');
@@ -244,4 +269,4 @@
     botToggle.onclick = () => botBox.style.display = 'block';
     botClose.onclick = () => botBox.style.display = 'none';
   </script></body>
-    </html>
+  </html>
