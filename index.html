@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ethereal Bot ✨ Powered by Titi</title>
+  <title>Ethereal Ink Studios | Falcon AI Bot</title>
+  <meta name="description" content="Falcon AI is your offline chatbot built by Titi. Powered by Ethereal Ink Studios." />
+  <meta name="theme-color" content="#084">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #001100, #000);
+      background: radial-gradient(#001f0f, #000);
       color: #eee;
       margin: 0;
       padding: 0;
@@ -21,13 +23,11 @@
     header h1 {
       font-size: 3rem;
       color: #0f0;
-      text-shadow: 0 0 10px #0f0, 0 0 40px #0f0;
-      animation: pulseGlow 2s infinite;
+      text-shadow: 0 0 15px #0f0;
     }
     header p {
       font-size: 1.1rem;
       color: #9f9;
-      text-shadow: 0 0 5px #0f08;
     }
     #chatBox {
       max-width: 600px;
@@ -35,36 +35,22 @@
       padding: 20px;
       background: #002f1acc;
       border: 2px solid #0c6;
-      border-radius: 20px;
-      box-shadow: 0 0 30px #0c6dd9dd;
-      backdrop-filter: blur(8px);
-      transition: all 0.4s ease;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #0c6cc9dd;
     }
     #chatLog {
-      height: 320px;
+      height: 300px;
       overflow-y: auto;
       background: #001a10;
       padding: 15px;
-      border-radius: 15px;
+      border-radius: 10px;
       font-size: 14px;
-      box-shadow: inset 0 0 8px #0f07;
     }
-    .bot-message, .user-message {
-      margin: 10px 0;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.5s ease forwards;
-    }
-    .bot-message {
-      color: #0c6;
-    }
-    .user-message {
-      color: #9ff;
-      text-align: right;
-    }
+    .bot-message { color: #0c6; margin: 6px 0; }
+    .user-message { color: #9ff; margin: 6px 0; text-align: right; }
     #chatInput {
       width: 100%;
-      padding: 12px;
+      padding: 10px;
       font-size: 16px;
       margin-top: 12px;
       border-radius: 10px;
@@ -77,8 +63,8 @@
       font-size: 13px;
       color: #0c6;
       font-style: italic;
-      margin: 5px 0;
       height: 18px;
+      margin: 6px 0;
       display: none;
     }
     footer {
@@ -87,53 +73,42 @@
       font-size: 0.95rem;
       color: #ccc;
     }
-    @keyframes pulseGlow {
-      0% { text-shadow: 0 0 10px #0f0; }
-      50% { text-shadow: 0 0 25px #0f0; }
-      100% { text-shadow: 0 0 10px #0f0; }
-    }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>✨ Ethereal Bot</h1>
-    <p>Your Offline AI by Titi • Built for Smart Hustlers</p>
+    <h1>🧠 Falcon AI</h1>
+    <p>Offline Chatbot by Ethereal Ink Studios – Powered by Titi</p>
   </header>
 
   <div id="chatBox">
-    <div id="chatLog">👋 Hello! I’m Ethereal, your offline AI. Ask me anything about bots, jobs, trading, or Titi’s tools.</div>
+    <div id="chatLog">👋 Hello! I’m Falcon, your offline AI. Ask me anything about jobs, bots, trading, or Titi's tools.</div>
     <div id="typingIndicator">Typing<span id="dots">...</span></div>
-    <input id="chatInput" type="text" placeholder="Ask me something..." />
+    <input id="chatInput" type="text" placeholder="Ask me anything..." />
   </div>
 
   <footer>
-    ⚡ Powered by <strong>Ethereal Ink Studios</strong> — African AI Bots Built by Titi 🇿🇦
+    ⚡ Falcon AI is a local bot built with love by Titi from Ethereal Ink Studios – South Africa’s AI & Tech Hustle Lab.
   </footer>
 
   <script>
-    const brain = {
+    const falconBrain = {
       "what is forex": "📊 Forex is the global currency market — bots like ours help find sniper entries.",
       "who is titi": "🔥 Titi is the mastermind behind Ethereal Ink, building bots and hustle tech from SA.",
       "how to get a job": "🧠 Use JobSniper X — it helps auto-apply for jobs using AI-powered CV tricks.",
       "what is dagozone": "🕵️ DAGO Zone holds private AI tools, utilities, and secret apps.",
       "help": "🧠 Try asking: 'what is forex', 'who is titi', or 'how to use JobSniper'.",
-      "ethereal ink": "🌿 Ethereal Ink Studios is an AI tech lab helping Africans thrive using smart tools.",
-      "how to use bots": "🛠️ Click and go — most tools need no login and work instantly.",
-      "what is ethereal": "🦅 I’m Ethereal, your offline assistant — I answer job, bot, and money questions.",
-      "how to make money": "💰 Use forex bots, job tools, or launch your hustle with AI help.",
-      "game": "🎮 Try the flying game — mobile-ready with cool designs and rewards.",
-      "weather": "☁️ Stylish weather app with AI forecast, no install needed.",
-      "default": "🤖 Hmm... I didn’t catch that. Try asking about forex, bots, jobs, or Titi."
+      "what is ethereal ink": "🌿 Ethereal Ink Studios is an AI tech lab building tools to help Africans rise.",
+      "how to use bots": "🛠️ Just visit our tools. Most bots run instantly — no login needed.",
+      "what is falcon": "🦅 Falcon is your offline assistant — trained to help with bots, jobs, and forex.",
+      "how to make money": "💰 Use forex bots, job tools, or launch your own hustle with smart tech.",
+      "game": "🎮 Our flying game is fun, stylish, and built for mobile — inspired by SA creativity.",
+      "weather": "☁️ The weather tool gives AI-style forecasts with visuals. Free to use.",
+      "default": "🤖 Hmm... I didn't catch that. Try: forex, jobs, Titi, game, DAGO, weather."
     };
 
     const chatInput = document.getElementById("chatInput");
@@ -149,7 +124,6 @@
         count++;
       }, 400);
     }
-
     function stopDots() {
       clearInterval(dotsInterval);
       dots.textContent = '';
@@ -165,21 +139,21 @@
     async function botReply(message) {
       typingIndicator.style.display = "block";
       startDots();
-      await new Promise(r => setTimeout(r, 1200));
+      await new Promise(r => setTimeout(r, 1000));
       stopDots();
       typingIndicator.style.display = "none";
 
       const msg = message.toLowerCase();
-      let reply = brain.default;
-      for (let key in brain) {
+      let reply = falconBrain.default;
+      for (let key in falconBrain) {
         if (msg.includes(key)) {
-          reply = brain[key];
+          reply = falconBrain[key];
           break;
         }
       }
 
       chatLog.innerHTML += `<div class="user-message"><strong>You:</strong> ${message}</div>`;
-      chatLog.innerHTML += `<div class="bot-message"><strong>Ethereal:</strong> ${reply}</div>`;
+      chatLog.innerHTML += `<div class="bot-message"><strong>Falcon:</strong> ${reply}</div>`;
       chatLog.scrollTop = chatLog.scrollHeight;
       speak(reply);
     }
@@ -196,4 +170,4 @@
     });
   </script>
 </body>
-</html>
+  </html>   
