@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereal Ink SA - Win R500 Gift Cards & Free Rewards</title>
+    <style>
+        :root {
+            --primary: #10b981;
+            --secondary: #0369a1;
+            --accent: #f59e0b;
+            --purple: #8b5cf6;
+            --dark: #1f2937;
+            --light: #f8fafc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* DOPE LOGO STYLES */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem 0;
+        }
+        
+        .logo-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--purple), var(--secondary));
+            padding: 25px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .logo-icon {
+            font-size: 3.5rem;
+            color: white;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+        }
+        
+        .logo-main {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--purple), var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo-sub {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--secondary);
+            letter-spacing: 4px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        
+        .logo-tagline {
+            font-size: 1.2rem;
+            color: #64748b;
+            font-weight: 500;
+            background: linear-gradient(135deg, #10b981, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .logo-glow {
+            width: 200px;
+            height: 20px;
+            background: radial-gradient(ellipse, rgba(139, 92, 246, 0.3), transparent 70%);
+            margin: 0 auto;
+            border-radius: 50%;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 25px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            background: rgba(3, 105, 161, 0.05);
+        }
+        
+        .nav-link:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(3, 105, 161, 0.3);
+        }
+        
+        /* Urgency Banner */
+        .urgency-banner {
+            background: linear-gradient(135deg, #ef4444, #dc2626, #f59e0b);
+            color: white;
+            padding: 18px;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            animation: pulse 2s infinite;
+            box-shadow: 0 5px 20px rgba(239, 68, 68, 0.3);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 5px 20px rgba(239, 68, 68, 0.3); }
+            50% { transform: scale(1.02); box-shadow: 0 8px 25px rgba(239, 68, 68, 0.5); }
+            100% { transform: scale(1); box-shadow: 0 5px 20px rgba(239, 68, 68, 0.3); }
+        }
+        
+        /* Offer Grid */
+        .offer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .offer-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .offer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(135deg, var(--primary), var(--purple));
+        }
+        
+        .offer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .offer-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+        }
+        
+        .offer-title {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .offer-description {
+            color: #64748b;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .payout-badge {
+            background: linear-gradient(135deg, var(--accent), #eab308);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            margin: 1.5rem 0;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+        }
+        
+        /* CTA Buttons */
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--purple));
+            color: white;
+            padding: 18px 45px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(16, 185, 129, 0.6);
+        }
+        
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--purple), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark), #111827);
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+            border-radius: 30px 30px 0 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+        
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
+            padding: 5px 0;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .logo-main {
+                font-size: 2.5rem;
+            }
+            
+            .logo-sub {
+                font-size: 1.1rem;
+                letter-spacing: 2px;
+            }
+            
+            .offer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-link {
+                width: 200px;
+                text-align: center;
+            }
+            
+            .cta-button {
+                padding: 15px 35px;
+                font-size: 1.1rem;
+            }
+            
+            .logo-badge {
+                padding: 20px;
+            }
+            
+            .logo-icon {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with DOPE LOGO -->
+        <header>
+            <div class="logo-container">
+                <div class="logo-badge">
+                    <div class="logo-icon">⚡</div>
+                </div>
+                <div class="logo-main">Ethereal Ink</div>
+                <div class="logo-sub">SOUTH AFRICA</div>
+                <div class="logo-tagline">Premium Rewards & Exclusive Giveaways</div>
+                <div class="logo-glow"></div>
+            </div>
+            
+            <p class="tagline">Your Ultimate Gateway to Free Gift Cards, Airtime & Exclusive Rewards</p>
+            
+            <nav>
+                <a href="#giftcards" class="nav-link">🎯 Gift Cards</a>
+                <a href="#airtime" class="nav-link">📱 Free Airtime</a>
+                <a href="#rewards" class="nav-link">🛒 Exclusive Rewards</a>
+                <a href="#how-it-works" class="nav-link">⚡ How It Works</a>
+                <a href="#contact" class="nav-link">📞 Contact</a>
+            </nav>
+        </header>
+
+        <!-- Urgency Banner -->
+        <div class="urgency-banner">
+            🚀 LIMITED TIME! Claim your EXCLUSIVE R500 Gift Card before midnight! 🚀
+        </div>
+
+        <!-- Main Offers Grid -->
+        <div class="offer-grid">
+            <!-- Gift Card Offer -->
+            <div class="offer-card" id="giftcards">
+                <div class="offer-icon">💳</div>
+                <h2 class="offer-title">WIN R500 VISA GIFT CARD</h2>
+                <p class="offer-description">Instant entry to win R500 Visa gift card! Shop anywhere online or in-store. No surveys, no payments - just pure winning energy!</p>
+                <div class="payout-badge">🔥 $2.91 PER ENTRY</div>
+                <a href="https://singingfiles.com/show.php?l=0&u=2456188&id=72074" class="cta-button" target="_blank">CLAIM YOUR GIFT CARD</a>
+            </div>
+
+            <!-- Airtime Offer -->
+            <div class="offer-card" id="airtime">
+                <div class="offer-icon">📱</div>
+                <h2 class="offer-title">FREE R1000 AIRTIME</h2>
+                <p class="offer-description">Get R1000 FREE airtime for Vodacom, MTN, or Cell C! Stay connected with your loved ones without spending a cent.</p>
+                <div class="payout-badge">⭐ EXCLUSIVE OFFER</div>
+                <a href="https://singingfiles.com/show.php?l=0&u=2456188&id=72074" class="cta-button" target="_blank">GET FREE AIRTIME</a>
+            </div>
+
+            <!-- Rewards Offer -->
+            <div class="offer-card" id="rewards">
+                <div class="offer-icon">🎁</div>
+                <h2 class="offer-title">EXCLUSIVE REWARDS</h2>
+                <p class="offer-description">Access premium rewards including Netflix accounts, gaming vouchers, and exclusive SA-only deals updated daily!</p>
+                <div class="payout-badge">🎁 NEW REWARDS DAILY</div>
+                <a href="https://singingfiles.com/show.php?l=0&u=2456188&id=72074" class="cta-button" target="_blank">VIEW REWARDS</a>
+            </div>
+        </div>
+
+        <!-- How It Works -->
+        <section id="how-it-works" style="margin: 5rem 0;">
+            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.8rem; color: var(--secondary); background: linear-gradient(135deg, var(--secondary), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">HOW IT WORKS</h2>
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">1</div>
+                    <h3 style="color: var(--dark); margin-bottom: 1rem;">SELECT REWARD</h3>
+                    <p style="color: #64748b;">Choose from gift cards, airtime, or exclusive rewards</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2</div>
+                    <h3 style="color: var(--dark); margin-bottom: 1rem;">QUICK ENTRY</h3>
+                    <p style="color: #64748b;">Simple registration takes less than 30 seconds</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <h3 style="color: var(--dark); margin-bottom: 1rem;">INSTANT ACCESS</h3>
+                    <p style="color: #64748b;">Immediate entry into exclusive giveaway</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <h3 style="color: var(--dark); margin-bottom: 1rem;">CLAIM PRIZE</h3>
+                    <p style="color: #64748b;">Winners notified instantly via email & SMS</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">8,247+</div>
+                <h3 style="color: var(--dark); margin-bottom: 1rem;">HAPPY WINNERS</h3>
+                <p style="color: #64748b;">South Africans claiming exclusive rewards</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">R550K+</div>
+                <h3 style="color: var(--dark); margin-bottom: 1rem;">REWARDS GIVEN</h3>
+                <p style="color: #64748b;">In gift cards, airtime & premium subscriptions</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">99%</div>
+                <h3 style="color: var(--dark); margin-bottom: 1rem;">SATISFACTION</h3>
+                <p style="color: #64748b;">Rated excellent by our premium community</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Ethereal Ink SA</h3>
+                    <p style="color: #d1d5db; line-height: 1.7;">Bringing exclusive premium rewards and luxury giveaways to South Africa since 2024. Your trusted partner in winning big!</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Premium Rewards</h3>
+                    <div class="footer-links">
+                        <a href="#giftcards">💎 Gift Cards</a>
+                        <a href="#airtime">📱 Free Airtime</a>
+                        <a href="#rewards">🛒 Exclusive Rewards</a>
+                        <a href="#how-it-works">⚡ How It Works</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal & Support</h3>
+                    <div class="footer-links">
+                        <a href="#terms">📄 Terms & Conditions</a>
+                        <a href="#privacy">🔒 Privacy Policy</a>
+                        <a href="#contact">📞 Contact Support</a>
+                        <a href="#faq">❓ FAQ Help Center</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p style="color: #d1d5db; margin-bottom: 0.8rem;">📧 support@etherealinkbytiisetso.com</p>
+                    <p style="color: #d1d5db; margin-bottom: 0.8rem;">🕒 Mon-Fri 8AM-6PM SAST</p>
+                    <p style="color: #d1d5db;">📍 Serving All South Africa</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Ethereal Ink SA. All rights reserved. | Premium Rewards Platform Designed for South African Champions
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Track clicks for analytics
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function() {
+                console.log('Offer clicked: ' + this.textContent);
+                // In production, you'd add Google Analytics or CPAGrip tracking here
+            });
+        });
+
+        // Simple animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Apply animations to cards
+        document.querySelectorAll('.offer-card').forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+  </html>
