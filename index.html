@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Portfolio | Professional Services</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 2.8rem;
+            font-weight: 600;
+        }
+        
+        h3 {
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover:after {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+        }
+        
+        .btn-success {
+            background-color: var(--success);
+        }
+        
+        .btn-warning {
+            background-color: var(--warning);
+        }
+        
+        .btn-light {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+        
+        .text-center .section-title:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Navigation */
+        .main-nav {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.85) 0%, rgba(52, 152, 219, 0.85) 100%);
+            color: white;
+            padding: 200px 0 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero h1 {
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Business Cards Section */
+        .business-cards {
+            background-color: #f9f9f9;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .business-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .business-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            padding: 30px 30px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .card-content {
+            padding: 30px;
+        }
+        
+        .card-content h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .card-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .card-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-features i {
+            color: var(--success);
+            margin-right: 10px;
+        }
+        
+        .card-footer {
+            padding: 20px 30px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        
+        /* Cleaning Services Section */
+        .cleaning-services {
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            color: white;
+        }
+        
+        .cleaning-services .section-title:after {
+            background-color: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        /* E-commerce Section */
+        .ecommerce {
+            background-color: #f9f9f9;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-img {
+            height: 200px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+        
+        .product-content {
+            padding: 25px;
+        }
+        
+        .product-content h4 {
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        
+        /* Insurance Section */
+        .insurance {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+        }
+        
+        .insurance .section-title:after {
+            background-color: white;
+        }
+        
+        .insurance-plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .plan-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .plan-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        
+        /* Food Section */
+        .food {
+            background-color: #f9f9f9;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .menu-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+        
+        .menu-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .menu-img {
+            height: 200px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+        
+        .menu-content {
+            padding: 25px;
+        }
+        
+        .menu-content h4 {
+            margin-bottom: 10px;
+        }
+        
+        .menu-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        
+        /* Salon Section */
+        .salon {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+        }
+        
+        .salon .section-title:after {
+            background-color: white;
+        }
+        
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .salon-service {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .salon-service:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .salon-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: #f9f9f9;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            background-color: rgba(44, 62, 80, 0.05);
+        }
+        
+        .contact-item i {
+            color: var(--primary);
+            margin-right: 20px;
+            margin-top: 5px;
+            font-size: 1.5rem;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark) 0%, #1a2530 100%);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 8px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            font-size: 0.9rem;
+        }
+        
+        /* Icons using Unicode */
+        .icon-broom:before { content: "🧹"; }
+        .icon-cart:before { content: "🛒"; }
+        .icon-shield:before { content: "🛡️"; }
+        .icon-utensils:before { content: "🍽️"; }
+        .icon-scissors:before { content: "✂️"; }
+        .icon-home:before { content: "🏠"; }
+        .icon-building:before { content: "🏢"; }
+        .icon-water:before { content: "💧"; }
+        .icon-phone:before { content: "📱"; }
+        .icon-shirt:before { content: "👕"; }
+        .icon-blender:before { content: "🥤"; }
+        .icon-headphones:before { content: "🎧"; }
+        .icon-heart:before { content: "❤️"; }
+        .icon-medical:before { content: "⚕️"; }
+        .icon-car:before { content: "🚗"; }
+        .icon-burger:before { content: "🍔"; }
+        .icon-pizza:before { content: "🍕"; }
+        .icon-chicken:before { content: "🍗"; }
+        .icon-icecream:before { content: "🍦"; }
+        .icon-spa:before { content: "💆"; }
+        .icon-nails:before { content: "💅"; }
+        
+        /* Responsive Styles */
+        @media (max-width: 1100px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 25px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.show {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 12px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <a href="#" class="logo">Business<span>Portfolio</span></a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#businesses">Our Businesses</a></li>
+                <li><a href="#cleaning">Cleaning</a></li>
+                <li><a href="#ecommerce">E-commerce</a></li>
+                <li><a href="#insurance">Insurance</a></li>
+                <li><a href="#food">Food</a></li>
+                <li><a href="#salon">Salon</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobile-menu">
+                <span>☰</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Professional Business Solutions</h1>
+            <p>Discover our portfolio of premium services designed to meet all your needs with excellence and reliability.</p>
+            <div class="hero-btns">
+                <a href="#businesses" class="btn btn-primary">Explore Services</a>
+                <a href="#contact" class="btn btn-light">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Cards Section -->
+    <section class="business-cards" id="businesses">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Our Business Portfolio</h2>
+                <p>Comprehensive services tailored to meet your every need</p>
+            </div>
+            <div class="cards-grid">
+                <!-- Cleaning Business Card -->
+                <div class="business-card">
+                    <div class="card-header">
+                        <div class="card-icon icon-broom"></div>
+                        <h3>SparkleClean Services</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Professional cleaning services for homes and businesses. We deliver spotless results every time.</p>
+                        <ul class="card-features">
+                            <li><span>✓</span> Residential Cleaning</li>
+                            <li><span>✓</span> Commercial Cleaning</li>
+                            <li><span>✓</span> Deep Cleaning</li>
+                            <li><span>✓</span> Move-in/Move-out Cleaning</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#cleaning" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- E-commerce Business Card -->
+                <div class="business-card">
+                    <div class="card-header">
+                        <div class="card-icon icon-cart"></div>
+                        <h3>MarketPlace Retail</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Your one-stop online shop for quality products. Fast delivery and excellent customer service.</p>
+                        <ul class="card-features">
+                            <li><span>✓</span> Electronics & Gadgets</li>
+                            <li><span>✓</span> Fashion & Accessories</li>
+                            <li><span>✓</span> Home & Living</li>
+                            <li><span>✓</span> Secure Payment Options</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#ecommerce" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Insurance Business Card -->
+                <div class="business-card">
+                    <div class="card-header">
+                        <div class="card-icon icon-shield"></div>
+                        <h3>SecureGuard Insurance</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Comprehensive insurance solutions to protect what matters most to you and your family.</p>
+                        <ul class="card-features">
+                            <li><span>✓</span> Life Insurance</li>
+                            <li><span>✓</span> Health Insurance</li>
+                            <li><span>✓</span> Auto Insurance</li>
+                            <li><span>✓</span> Home Insurance</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#insurance" class="btn btn-primary">Get Quote</a>
+                    </div>
+                </div>
+
+                <!-- Food Business Card -->
+                <div class="business-card">
+                    <div class="card-header">
+                        <div class="card-icon icon-utensils"></div>
+                        <h3>TasteBites Kitchen</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Delicious meals prepared with fresh ingredients. Dine-in, takeaway, and delivery options available.</p>
+                        <ul class="card-features">
+                            <li><span>✓</span> Fresh Daily Meals</li>
+                            <li><span>✓</span> Catering Services</li>
+                            <li><span>✓</span> Online Ordering</li>
+                            <li><span>✓</span> Family Packages</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#food" class="btn btn-primary">View Menu</a>
+                    </div>
+                </div>
+
+                <!-- Salon Business Card -->
+                <div class="business-card">
+                    <div class="card-header">
+                        <div class="card-icon icon-scissors"></div>
+                        <h3>Glamour Studio Salon</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Premium beauty and grooming services to help you look and feel your absolute best.</p>
+                        <ul class="card-features">
+                            <li><span>✓</span> Hair Styling & Coloring</li>
+                            <li><span>✓</span> Skincare & Facials</li>
+                            <li><span>✓</span> Nail Services</li>
+                            <li><span>✓</span> Spa Treatments</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#salon" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cleaning Services Section -->
+    <section class="cleaning-services" id="cleaning">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">SparkleClean Services</h2>
+                <p>Professional cleaning solutions for every space</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon icon-home"></div>
+                    <h3>Residential Cleaning</h3>
+                    <p>Thorough cleaning of homes, apartments, and living spaces. We handle everything from dusting to deep cleaning.</p>
+                    <a href="#contact" class="btn btn-light">Book Service</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon icon-building"></div>
+                    <h3>Commercial Cleaning</h3>
+                    <p>Professional cleaning for offices, retail spaces, and commercial buildings. Customized plans available.</p>
+                    <a href="#contact" class="btn btn-light">Get Quote</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon icon-water"></div>
+                    <h3>Deep Cleaning</h3>
+                    <p>Intensive cleaning service for move-in/move-out, spring cleaning, or post-renovation cleanup.</p>
+                    <a href="#contact" class="btn btn-light">Schedule Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-commerce Section -->
+    <section class="ecommerce" id="ecommerce">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">MarketPlace Retail</h2>
+                <p>Quality products delivered to your doorstep</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img icon-phone"></div>
+                    <div class="product-content">
+                        <h4>Smartphone X1</h4>
+                        <p>Latest smartphone with advanced features and premium camera.</p>
+                        <div class="product-price">R 8,999</div>
+                        <a href="#contact" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img icon-shirt"></div>
+                    <div class="product-content">
+                        <h4>Premium T-Shirt</h4>
+                        <p>100% cotton t-shirt available in multiple colors and sizes.</p>
+                        <div class="product-price">R 299</div>
+                        <a href="#contact" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img icon-blender"></div>
+                    <div class="product-content">
+                        <h4>Kitchen Blender</h4>
+                        <p>High-power blender perfect for smoothies, soups, and more.</p>
+                        <div class="product-price">R 1,499</div>
+                        <a href="#contact" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img icon-headphones"></div>
+                    <div class="product-content">
+                        <h4>Wireless Headphones</h4>
+                        <p>Noise-cancelling headphones with 30-hour battery life.</p>
+                        <div class="product-price">R 2,199</div>
+                        <a href="#contact" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance Section -->
+    <section class="insurance" id="insurance">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">SecureGuard Insurance</h2>
+                <p>Protecting your future with comprehensive coverage</p>
+            </div>
+            <div class="insurance-plans">
+                <div class="plan-card">
+                    <div class="plan-icon icon-heart"></div>
+                    <h3>Life Insurance</h3>
+                    <p>Financial protection for your loved ones with flexible coverage options.</p>
+                    <div class="plan-price">From R 250/pm</div>
+                    <a href="#contact" class="btn btn-light">Get Quote</a>
+                </div>
+                <div class="plan-card">
+                    <div class="plan-icon icon-medical"></div>
+                    <h3>Health Insurance</h3>
+                    <p>Comprehensive medical coverage for you and your family.</p>
+                    <div class="plan-price">From R 800/pm</div>
+                    <a href="#contact" class="btn btn-light">Get Quote</a>
+                </div>
+                <div class="plan-card">
+                    <div class="plan-icon icon-car"></div>
+                    <h3>Auto Insurance</h3>
+                    <p>Complete vehicle protection with roadside assistance.</p>
+                    <div class="plan-price">From R 350/pm</div>
+                    <a href="#contact" class="btn btn-light">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Section -->
+    <section class="food" id="food">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">TasteBites Kitchen</h2>
+                <p>Delicious meals made with love and fresh ingredients</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="menu-img icon-burger"></div>
+                    <div class="menu-content">
+                        <h4>Gourmet Burger</h4>
+                        <p>Juicy beef patty with fresh vegetables and special sauce.</p>
+                        <div class="menu-price">R 89</div>
+                        <a href="#contact" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-img icon-pizza"></div>
+                    <div class="menu-content">
+                        <h4>Margherita Pizza</h4>
+                        <p>Classic pizza with tomato, mozzarella, and fresh basil.</p>
+                        <div class="menu-price">R 120</div>
+                        <a href="#contact" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-img icon-chicken"></div>
+                    <div class="menu-content">
+                        <h4>Grilled Chicken</h4>
+                        <p>Tender chicken breast with herbs and seasonal vegetables.</p>
+                        <div class="menu-price">R 95</div>
+                        <a href="#contact" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-img icon-icecream"></div>
+                    <div class="menu-content">
+                        <h4>Dessert Platter</h4>
+                        <p>Assortment of our finest desserts and pastries.</p>
+                        <div class="menu-price">R 65</div>
+                        <a href="#contact" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Salon Section -->
+    <section class="salon" id="salon">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Glamour Studio Salon</h2>
+                <p>Beauty and grooming services to enhance your natural beauty</p>
+            </div>
+            <div class="services-list">
+                <div class="salon-service">
+                    <div class="salon-icon icon-scissors"></div>
+                    <h3>Hair Styling</h3>
+                    <p>Professional haircuts, styling, and coloring services by experienced stylists.</p>
+                    <a href="#contact" class="btn btn-light">Book Now</a>
+                </div>
+                <div class="salon-service">
+                    <div class="salon-icon icon-spa"></div>
+                    <h3>Facials & Skincare</h3>
+                    <p>Rejuvenating facials and skincare treatments for healthy, glowing skin.</p>
+                    <a href="#contact" class="btn btn-light">Book Now</a>
+                </div>
+                <div class="salon-service">
+                    <div class="salon-icon icon-nails"></div>
+                    <h3>Manicure & Pedicure</h3>
+                    <p>Luxurious nail care services with a wide range of polish options.</p>
+                    <a href="#contact" class="btn btn-light">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Get In Touch</h2>
+                <p>Contact us for any inquiries or to book our services</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="icon-home"></span>
+                        <div>
+                            <h4>Our Location</h4>
+                            <p>123 Business District, Sandton<br>Johannesburg, South Africa</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon-phone"></span>
+                        <div>
+                            <h4>Phone Number</h4>
+                            <p>+27 78 403 4135</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span>✉️</span>
+                        <div>
+                            <h4>Email Address</h4>
+                            <p>info@businessportfolio.co.za</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span>🕒</span>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Monday - Saturday: 8:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" class="form-control" required>
+                                <option value="">Select a service</option>
+                                <option value="cleaning">Cleaning Services</option>
+                                <option value="ecommerce">E-commerce Products</option>
+                                <option value="insurance">Insurance</option>
+                                <option value="food">Food & Restaurant</option>
+                                <option value="salon">Salon Services</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Business Portfolio</h3>
+                    <p>Comprehensive business solutions designed to meet all your needs with excellence and reliability.</p>
+                    <div class="social-links">
+                        <a href="#">FB</a>
+                        <a href="#">IG</a>
+                        <a href="#">TW</a>
+                        <a href="#">IN</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Businesses</h3>
+                    <ul class="footer-links">
+                        <li><a href="#cleaning">SparkleClean Services</a></li>
+                        <li><a href="#ecommerce">MarketPlace Retail</a></li>
+                        <li><a href="#insurance">SecureGuard Insurance</a></li>
+                        <li><a href="#food">TasteBites Kitchen</a></li>
+                        <li><a href="#salon">Glamour Studio Salon</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#businesses">Our Portfolio</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p>📍 123 Business District, Sandton</p>
+                    <p>📞 +27 78 403 4135</p>
+                    <p>✉️ info@businessportfolio.co.za</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Business Portfolio. All Rights Reserved. | Crafted with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('show');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if(window.innerWidth <= 768) {
+                        document.getElementById('nav-links').classList.remove('show');
+                    }
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Sticky header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.main-nav');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.08)';
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
